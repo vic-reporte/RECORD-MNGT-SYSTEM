@@ -20,7 +20,7 @@ include('../middleware/adminMiddleware.php');
                             </div>
                             <div class="col-md-6">
                                 <label for="">Record Type</label>
-                                <input type="text" name="record type" placeholder="Enter Record Type" class="form-control">
+                                <input type="text" name="record_type" placeholder="Enter Record Type" class="form-control">
                             </div>
                             <div class="col-md-6">
                                 <label for="">Source</label>
