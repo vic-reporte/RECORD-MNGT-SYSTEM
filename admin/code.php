@@ -27,7 +27,7 @@ if(isset($_POST['record_category_btn']))
 
     if($categ_query_run)
     {
-        move_uploaded_file($_FILES['image']['tmp_name'], $path);
+        move_uploaded_file($_FILES['image']['tmp_name'], $path.'/'.$filename);
     }
     else
     {
