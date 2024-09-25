@@ -9,7 +9,7 @@ include('../middleware/adminMiddleware.php');
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Record Category</h4>
+                    <h4>Add Record Category</h4>
                 </div>
                 <div class="card-body">
                     <form action="code.php" method="POST" enctype="multipart/form-data">

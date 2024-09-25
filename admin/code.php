@@ -15,7 +15,7 @@ if(isset($_POST['record_category_btn']))
 
     $image = $_FILES['image']['name'];
 
-    $path = "uploads";
+    $path = "../uploads";
 
     $image_ext = pathinfo($image, PATHINFO_EXTENSION);
     $filename = time().'.'.$image_ext;
@@ -28,6 +28,8 @@ if(isset($_POST['record_category_btn']))
     if($categ_query_run)
     {
         move_uploaded_file($_FILES['image']['tmp_name'], $path.'/'.$filename);
+
+        redirect("record-category.php", "Record Added Successfully");
     }
     else
     {
