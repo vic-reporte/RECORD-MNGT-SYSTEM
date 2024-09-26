@@ -20,8 +20,8 @@ if(isset($_POST['record_category_btn']))
     $image_ext = pathinfo($image, PATHINFO_EXTENSION);
     $filename = time().'.'.$image_ext;
 
-    $categ_query = "INSERT INTO record_category (route_name, record_type, source, subject_matter, action_unit, status, remark, image)
-    VALUES ('$route_name', '$record_type', '$source', '$subject_matter', '$action_unit', '$status', '$remark','$filename')";
+    $categ_query = "INSERT INTO record_category (route_num, record_type, source, subject_matter, action_unit, status, remark, image)
+    VALUES ('$route_num', '$record_type', '$source', '$subject_matter', '$action_unit', '$status', '$remark','$filename')";
 
     $categ_query_run = mysqli_query($con, $categ_query);
 
