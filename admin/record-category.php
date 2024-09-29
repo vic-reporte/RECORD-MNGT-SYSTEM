@@ -14,44 +14,88 @@ include('../middleware/adminMiddleware.php');
                 <div class="card-body">
                     <form action="code.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-2">
                                 <label for="">Route Number:</label>
                                 <input type="text" name="route_number" placeholder="Enter Route Number" class="form-control">
                             </div>
-                            <div class="col-md-6">
-                                <label for="">Record Type:</label>
-                                <input type="text" name="record_type" placeholder="Enter Record Type" class="form-control">
-                            </div>
-                            <div class="dropdown-column">
-                                <label for="dropdown1">Source:</label>
-                                <select id="dropdown1" name="dropdown1">
-                                    <option value="SGOD">SGOD</option>
-                                    <option value="Record Unit">Record Unit</option>
-                                    <option value="Admin Unit">Admin Unit</option>
-                                    <option value="Personnel Unit">Personnel Unit</option>
-                                    <option value="Accounting Unit">Accounting Unit</option>
-                                    <option value="Cash Unit">Cash Unit</option>
-                                    <option value="CID">CID</option>
-                                    <option value="SDS">SDS</option>
-                                    <option value="ASDS">ASDS</option>
-                                    <option value="ICT">ICT</option>
-                                    <option value="Budget Unit">Budget Unit</option>
-                                    <option value="Health Unit">Health Unit</option>
+                            <div class="col-md-2">
+                                <label for="select">Record Type</label>
+                                <select class="form-select" id="sel1" name="sellist1">
+                                    <option>APPLICATION FOR GOV'T</option>
+                                    <option>PERMIT</option>
+                                    <option>APPLICATION/PROMOTION</option>
+                                    <option>APPOINTMENT</option>
+                                    <option>BILLS</option>
+                                    <option>BOND</option>
+                                    <option>BUDGET</option>
+                                    <option>REQUIREMENT</option>
+                                    <option>CEDULA</option>
+                                    <option>CERTIFICATION</option>
+                                    <option>CHANGE OF NAME</option>
+                                    <option>CLEARANCE</option>
+                                    <option>COMPLAINT LETTER</option>
+                                    <option>CONFIDENTIAL</option>
+                                    <option>CORRECTION OF ENTRIES</option>
+                                    <option>DIPLOMA</option>
+                                    <option>EMAIL ENDORSEMENT</option>
+                                    <option>ERF</option>
+                                    <option>FORM 4</option>
+                                    <option>FORM 6</option>
+                                    <option>FORM 7</option>
+                                    <option>GAD ACCOMPLISHMENT</option>
+                                    <option>GAD PLAN/BUDGET</option>
+                                    <option>INVITATIONAL</option>
+                                    <option>IOT</option>
+                                    <option>IPCRF/OPCRF</option>
+                                    <option>JOB ORDER CONTRACT</option>
+                                    <option>LETTER</option>
+                                    <option>LOCATOR SLIP</option>
+                                    <option>MATERNITY</option>
+                                    <option>MEMO/ISSUANCES</option>
+                                    <option>MOA</option>
+                                    <option>MONETIZATION</option>
+                                    <option>NOSA</option>
+                                    <option>NOSI</option>
+                                    <option>PERMIT TO STUDY</option>
+                                    <option>PERMIT TO TEACH</option>
+                                    <option>PERTINENTS PAPERS</option>
+                                    <option>PROPOSAL</option>
+                                    <option>QUESTIONNAIRE</option>
+                                    <option>RECLASSIFICATION</option>
+                                    <option>RECOMMENDATION</option>
+                                    <option>REPORT</option>
+                                    <option>REQUEST</option>
+                                    <option>REQUEST FOR TRANSFER</option>
+                                    <option>REQUEST LETTER</option>
+                                    <option>RESEARCH</option>
+                                    <option>RESIGNATION</option>
+                                    <option>RETIREMENT</option>
+                                    <option>RETURN TO DUTY</option>
                                 </select>
                             </div>
-                            <div class="dropdown-column">
+                            <div class="dropend">
                                 <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
                                     Source
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">SGOD</a></li>
-                                    <li><a class="dropdown-item" href="#">Record Unit</a></li>
+                                    <li><a class="dropdown-item" href="#">Accounting Unit</a></li>
+                                    <li><a class="dropdown-item" href="#">Admin</a></li>
+                                    <li><a class="dropdown-item" href="#">ASDS</a></li>
+                                    <li><a class="dropdown-item" href="#">Budget Unit</a></li>
+                                    <li><a class="dropdown-item" href="#">Cash Unit</a></li>
+                                    <li><a class="dropdown-item" href="#">CID</a></li>
+                                    <li><a class="dropdown-item" href="#">Health Unit</a></li>
+                                    <li><a class="dropdown-item" href="#">ICT</a></li>
                                     <li><a class="dropdown-item" href="#">Personel Unit</a></li>
+                                    <li><a class="dropdown-item" href="#">Record Unit</a></li>
+                                    <li><a class="dropdown-item" href="#">SDS</a></li>
+                                    <li><a class="dropdown-item" href="#">SGOD</a></li>
+                                    <li><a class="dropdown-item" href="#">Supply Unit</a></li>
                                 </ul>
                             </div>
                             <div class="mb-2 mt-2">
                                 <label for="">Subject Matter:</label>
-                                <textarea class="form-control" rows="3" id="comment" name="text"></textarea>
+                                <textarea class="form-control" rows="2" id="comment" name="text"></textarea>
                             </div>
                             <div class="col-md-6">
                                 <label for="">Action Unit:</label>
