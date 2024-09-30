@@ -13,7 +13,7 @@ include('../middleware/adminMiddleware.php');
                 </div>
                 <div class="card-body">
                     <form action="code.php" method="POST" enctype="multipart/form-data">
-                        <div class="row">
+                        < class="row">
                             <div class="col-md-2">
                                 <label for="">Route Number:</label>
                                 <input type="text" name="route_number" placeholder="Enter Route Number" class="form-control">
@@ -73,63 +73,51 @@ include('../middleware/adminMiddleware.php');
                                     <option>RETURN TO DUTY</option>
                                 </select>
                             </div>
-                            <div class="dropend">
-                                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
-                                    Source
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Accounting Unit</a></li>
-                                    <li><a class="dropdown-item" href="#">Admin</a></li>
-                                    <li><a class="dropdown-item" href="#">ASDS</a></li>
-                                    <li><a class="dropdown-item" href="#">Budget Unit</a></li>
-                                    <li><a class="dropdown-item" href="#">Cash Unit</a></li>
-                                    <li><a class="dropdown-item" href="#">CID</a></li>
-                                    <li><a class="dropdown-item" href="#">Health Unit</a></li>
-                                    <li><a class="dropdown-item" href="#">ICT</a></li>
-                                    <li><a class="dropdown-item" href="#">Personel Unit</a></li>
-                                    <li><a class="dropdown-item" href="#">Record Unit</a></li>
-                                    <li><a class="dropdown-item" href="#">SDS</a></li>
-                                    <li><a class="dropdown-item" href="#">SGOD</a></li>
-                                    <li><a class="dropdown-item" href="#">Supply Unit</a></li>
-                                </ul>
+                            <div class="col-md-2">
+                                <label for="select">Source</label>
+                                <select class="form-select" id="sel1" name="sellist1">
+                                <option>Accounting Unit</option>
+                                    <option>Admin</option>
+                                    <option>ASDS</option>
+                                    <option>Budget Unit</option>
+                                    <option>Cash Unit</option>
+                                    <option>CID</option>
+                                    <option>Health</option>
+                                    <option>ICT</option>
+                                    <option>Personnel Unit</option>
+                                    <option>Record Unit</option>
+                                    <option>SDS</option>
+                                    <option>SGOD</option>
+                                    <option>Supply Unit</option>  
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="select">Action Unit</label>
+                                <select class="form-select" id="sel1" name="sellist1">
+                                    <option>Accounting Unit</option>
+                                    <option>Admin</option>
+                                    <option>ASDS</option>
+                                    <option>Budget Unit</option>
+                                    <option>Cash Unit</option>
+                                    <option>CID</option>
+                                    <option>Health</option>
+                                    <option>ICT</option>
+                                    <option>Personnel Unit</option>
+                                    <option>Record Unit</option>
+                                    <option>SDS</option>
+                                    <option>SGOD</option>
+                                    <option>Supply Unit</option>
+                                </select>
                             </div>
                             <div class="mb-2 mt-2">
                                 <label for="">Subject Matter:</label>
                                 <textarea class="form-control" rows="2" id="comment" name="text"></textarea>
                             </div>
-                            <div class="dropend">
-                                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
-                                    Action Uint
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Accounting Unit</a></li>
-                                    <li><a class="dropdown-item" href="#">Admin</a></li>
-                                    <li><a class="dropdown-item" href="#">ASDS</a></li>
-                                    <li><a class="dropdown-item" href="#">Budget Unit</a></li>
-                                    <li><a class="dropdown-item" href="#">Cash Unit</a></li>
-                                    <li><a class="dropdown-item" href="#">CID</a></li>
-                                    <li><a class="dropdown-item" href="#">Health Unit</a></li>
-                                    <li><a class="dropdown-item" href="#">ICT</a></li>
-                                    <li><a class="dropdown-item" href="#">Personel Unit</a></li>
-                                    <li><a class="dropdown-item" href="#">Record Unit</a></li>
-                                    <li><a class="dropdown-item" href="#">SDS</a></li>
-                                    <li><a class="dropdown-item" href="#">SGOD</a></li>
-                                    <li><a class="dropdown-item" href="#">Supply Unit</a></li>
-                                </ul>
-                            </div>
-                            <!--div class="col-md-6">
-                                <label for="">Action Unit:</label>
-                                <input type="text" name="action_unit" placeholder="Enter Action Unit" class="form-control">
-                            </!--div-->
-                            <div class="col-md-6">
-                                <label for="">Status</label>
-                                <input type="text" name="status" placeholder="Enter Status" class="form-control">
-                            </div>
-                            <div class="col-md-6">
+                            <div class="col-md-2">
                                 <label for="">Remark</label>
                                 <input type="text" name="remark" placeholder="Enter Remark" class="form-control">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-2">
                                 <label for="">Upload Image</label>
                                 <input type="file" name="image" class="form-control">
                             </div>
