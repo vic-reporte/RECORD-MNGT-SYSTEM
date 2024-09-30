@@ -13,7 +13,7 @@ include('../middleware/adminMiddleware.php');
                 </div>
                 <div class="card-body">
                     <form action="code.php" method="POST" enctype="multipart/form-data">
-                        < class="row">
+                        <class="row">
                             <div class="col-md-2">
                                 <label for="">Route Number:</label>
                                 <input type="text" name="route_number" placeholder="Enter Route Number" class="form-control">
