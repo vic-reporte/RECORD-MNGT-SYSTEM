@@ -97,10 +97,30 @@ include('../middleware/adminMiddleware.php');
                                 <label for="">Subject Matter:</label>
                                 <textarea class="form-control" rows="2" id="comment" name="text"></textarea>
                             </div>
-                            <div class="col-md-6">
+                            <div class="dropend">
+                                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                                    Action Uint
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Accounting Unit</a></li>
+                                    <li><a class="dropdown-item" href="#">Admin</a></li>
+                                    <li><a class="dropdown-item" href="#">ASDS</a></li>
+                                    <li><a class="dropdown-item" href="#">Budget Unit</a></li>
+                                    <li><a class="dropdown-item" href="#">Cash Unit</a></li>
+                                    <li><a class="dropdown-item" href="#">CID</a></li>
+                                    <li><a class="dropdown-item" href="#">Health Unit</a></li>
+                                    <li><a class="dropdown-item" href="#">ICT</a></li>
+                                    <li><a class="dropdown-item" href="#">Personel Unit</a></li>
+                                    <li><a class="dropdown-item" href="#">Record Unit</a></li>
+                                    <li><a class="dropdown-item" href="#">SDS</a></li>
+                                    <li><a class="dropdown-item" href="#">SGOD</a></li>
+                                    <li><a class="dropdown-item" href="#">Supply Unit</a></li>
+                                </ul>
+                            </div>
+                            <!--div class="col-md-6">
                                 <label for="">Action Unit:</label>
                                 <input type="text" name="action_unit" placeholder="Enter Action Unit" class="form-control">
-                            </div>
+                            </!--div-->
                             <div class="col-md-6">
                                 <label for="">Status</label>
                                 <input type="text" name="status" placeholder="Enter Status" class="form-control">
