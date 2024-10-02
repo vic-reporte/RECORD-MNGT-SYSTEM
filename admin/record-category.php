@@ -91,6 +91,10 @@ include('../middleware/adminMiddleware.php');
                                     <option>Supply Unit</option>  
                                 </select>
                             </div>
+                            <div class="mb-2 mt-2">
+                                <label for="">Subject Matter:</label>
+                                <textarea class="form-control" rows="2" id="comment" name="text"></textarea>
+                            </div>
                             <div class="col-md-2">
                                 <label for="select">Action Unit</label>
                                 <select class="form-select" id="sel1" name="sellist1">
@@ -109,13 +113,13 @@ include('../middleware/adminMiddleware.php');
                                     <option>Supply Unit</option>
                                 </select>
                             </div>
-                            <div class="mb-2 mt-2">
-                                <label for="">Subject Matter:</label>
-                                <textarea class="form-control" rows="2" id="comment" name="text"></textarea>
-                            </div>
                             <div class="col-md-2">
-                                <label for="">Remark</label>
-                                <input type="text" name="remark" placeholder="Enter Remark" class="form-control">
+                                <label for="select">Remark</label>
+                                <select class="form-select" id="sel1" name="sellist1">
+                                    <option>Release</option>
+                                    <option>Cancelled</option>
+                                    <option>Filed</option>
+                                </select>
                             </div>
                             <div class="col-md-2">
                                 <label for="">Upload Image</label>
