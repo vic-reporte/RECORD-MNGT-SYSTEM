@@ -19,8 +19,8 @@ include('../middleware/adminMiddleware.php');
                                 <input type="text" name="route_number" placeholder="Enter Route Number" class="form-control">
                             </div>
                             <div class="col-md-2">
-                                <label for="select">Record Type</label>
-                                <select class="form-select" id="sel1" name="sellist1">
+                                <label for="select">Record Type:</label>
+                                <select class="form-select" name="record_type">
                                     <option>APPLICATION FOR GOV'T</option>
                                     <option>PERMIT</option>
                                     <option>APPLICATION/PROMOTION</option>
@@ -74,8 +74,8 @@ include('../middleware/adminMiddleware.php');
                                 </select>
                             </div>
                             <div class="col-md-2">
-                                <label for="select">Source</label>
-                                <select class="form-select" id="sel1" name="sellist1">
+                                <label for="select">Source:</label>
+                                <select class="form-select" name="source">
                                 <option>Accounting Unit</option>
                                     <option>Admin</option>
                                     <option>ASDS</option>
@@ -93,11 +93,11 @@ include('../middleware/adminMiddleware.php');
                             </div>
                             <div class="mb-2 mt-2">
                                 <label for="">Subject Matter:</label>
-                                <textarea class="form-control" rows="2" id="comment" name="text"></textarea>
+                                <textarea class="form-control" rows="2" name="subject_matter"></textarea>
                             </div>
                             <div class="col-md-2">
-                                <label for="select">Action Unit</label>
-                                <select class="form-select" id="sel1" name="sellist1">
+                                <label for="select">Action Unit:</label>
+                                <select class="form-select" name="action_unit">
                                     <option>Accounting Unit</option>
                                     <option>Admin</option>
                                     <option>ASDS</option>
@@ -114,8 +114,16 @@ include('../middleware/adminMiddleware.php');
                                 </select>
                             </div>
                             <div class="col-md-2">
-                                <label for="select">Remark</label>
-                                <select class="form-select" id="sel1" name="sellist1">
+                                <label for="select">Status:</label>
+                                <select class="form-select" name="status">
+                                    <option>Release</option>
+                                    <option>Cancelled</option>
+                                    <option>Filed</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="select">Remark:</label>
+                                <select class="form-select" name="remark">
                                     <option>Release</option>
                                     <option>Cancelled</option>
                                     <option>Filed</option>
