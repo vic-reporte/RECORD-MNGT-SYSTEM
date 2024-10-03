@@ -134,7 +134,7 @@ include('../middleware/adminMiddleware.php');
                                 <input type="file" name="image" class="form-control">
                             </div>
                             <div clas="col-md-12">
-                                <button type="submit" class="btn btn-primary" name="record_category_btn">Save</button>
+                                <button type="submit" class="btn btn-primary mt-4" name="record_category_btn">Save</button>
                             </div>
                         </div>
                     </form>
