@@ -130,7 +130,7 @@ include('../middleware/adminMiddleware.php');
                                 </select>
                             </div>
                             <div class="col-md-2">
-                                <label for="">Upload Image</label>
+                                <label for="">Captured Image</label>
                                 <input type="file" name="image" class="form-control">
                             </div>
                             <div clas="col-md-12">
