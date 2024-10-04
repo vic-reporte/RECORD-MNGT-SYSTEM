@@ -1,54 +1,5 @@
 <?php
 
-//session_start();
-//include('../config/dbcon.php');
-//include('../functions/myfunctions.php');
-//if(isset($_POST['record_category_btn']))
-//{
-    //$route_number = $_POST['route_number'];
-   // $record_type = $_POST['record_type'];
-   // $source = $_POST['source'];
-   // $subject_matter = $_POST['subject_matter'];
-   // $action_unit = $_POST['action_unit'];
-   // $status = $_POST['status'];
-   // $remark = $_POST['remark'];
-
-   // $image = $_FILES['image']['name']; // Retrieve the uploaded file name
-   // $path = "../uploads";
-
-    //Validate and process image upload
-   // if(!empty($image)) {
-   // $image_ext = pathinfo($image, PATHINFO_EXTENSION);
-   // $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif'];
-
-    //if(in_array($image_ext, $allowed_extensions)) {
-        //$_filename = time().'.'.$image_ext;
-
-        //Prepared statement to prevent SQL injection
-    //$stmt = $con->prepare("INSERT INTO record_category (route_number, record_type, source, subject_matter, action_unit, status, remark, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    //$stmt->bind_param("ssssssss", $route_number, $record_type, $source, $subject_matter, $action_unit, $status, $remark,$filename);
-    
-
-    //if($stmt->execute())
-   // {
-       // move_uploaded_file($_FILES['image']['tmp_name'], $path.'/'.$filename);
-
-       // redirect("record-category.php", "Record Added Successfully");
-    //}
-   // else
-   // {
-       // redirect("record-category.php", "Something Went Wrong");
-    //}
-   // $stmt->close();
-//} else {
-    //redirect("record-category.php", "invalid File Type");
-//}
-//}
-// else 
-//{
-   // redirect("record-category.php" , "No File Uploaded");
-//}
-//}
 session_start();
 include('../config/dbcon.php');
 include('../functions/myfunctions.php');

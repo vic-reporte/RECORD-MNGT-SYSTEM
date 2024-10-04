@@ -9,12 +9,17 @@ include('../middleware/adminMiddleware.php');
         <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                Categories
+                <h4>Record Unit Data </h4>
               </div>
               <div class="card-body">
                 <table class="table table-boardered">
                    <thead>
-                    <tr></tr>
+                    <tr>Route Number</tr>
+                    <tr>Route Number</tr>
+                    <tr>Route Number</tr>
+                    <tr>Route Number</tr>
+                    <tr>Route Number</tr>
+                    
                    </thead>
 
                 </table>
