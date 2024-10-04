@@ -14,14 +14,29 @@ include('../middleware/adminMiddleware.php');
               <div class="card-body">
                 <table class="table table-boardered">
                    <thead>
-                    <tr>Route Number</tr>
-                    <tr>Route Number</tr>
-                    <tr>Route Number</tr>
-                    <tr>Route Number</tr>
-                    <tr>Route Number</tr>
-                    
+                      <tr>
+                    <th>Route Number</th>
+                    <th>Record Type</th>
+                    <th>Source</th>
+                    <th>Subject Matter</th>
+                    <th>Action Unit</th>
+                    <th>Status</th>
+                    <th>Remark</th>
+                    <th>Edit</th>
+                      </tr>
                    </thead>
-
+                    <tbody>
+                      <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                      </tr>
+                    </tbody>
                 </table>
               </div>  
             </div>
