@@ -41,7 +41,7 @@ include('../middleware/adminMiddleware.php');
                                       <td> <?= $item ['subject_matter']; ?></td>
                                       <td> <?= $item ['action_unit']; ?></td>
                                       <td>
-                                        <img src="../uploads/<?= $item ['Image']; ?>" alt="<?= $item ['name']; ?>" style="width:50px; height: auto;">
+                                        <img src="../uploads/<?= $item ['image']; ?>" alt="<?= $item ['image']; ?>" style="width:50px; height: auto;">
                                       </td>
                                       <td> <?= $item ['status']; ?></td>
                                       <td> <?= $item ['remark']; ?></td>
