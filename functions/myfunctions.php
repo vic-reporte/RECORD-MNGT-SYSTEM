@@ -4,8 +4,8 @@ include('../config/dbcon.php');
 function getAll($table)
 {
     global $con; // Ensuring that the $con variable is accessible inside the function
-    $query = "SELECT * FROM $table";
-    $query_run = mysqli_query($con, $query);
+    $query = "SELECT * FROM record_unit_data";
+    return $query_run = mysqli_query($con, $query);
 }
 
 function redirect($url, $message)

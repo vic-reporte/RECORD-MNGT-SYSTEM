@@ -118,7 +118,7 @@ include('../middleware/adminMiddleware.php');
                                 <select class="form-select" name="status">
                                     <option>Release</option>
                                     <option>Cancelled</option>
-                                    <option>Filed</option>
+                                    <option>File</option>
                                 </select>
                             </div>
                             <div class="col-md-2">
@@ -126,7 +126,7 @@ include('../middleware/adminMiddleware.php');
                                 <select class="form-select" name="remark">
                                     <option>Release</option>
                                     <option>Cancelled</option>
-                                    <option>Filed</option>
+                                    <option>File</option>
                                 </select>
                             </div>
                             <div class="col-md-2">
