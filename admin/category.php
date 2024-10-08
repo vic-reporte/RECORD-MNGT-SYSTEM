@@ -6,13 +6,13 @@ include('../middleware/adminMiddleware.php');
 
 <div class="container-fluid py-4">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-10">
             <div class="card">
               <div class="card-header">
                 <h4>Record Unit Data </h4>
               </div>
               <div class="card-body">
-                <table class="table table-secondary">
+                <table class="table table-secondary table-hover">
                    <thead>
                       <tr>
                           <th>Route Number</th>
@@ -20,7 +20,7 @@ include('../middleware/adminMiddleware.php');
                           <th>Source</th>
                           <th>Subject Matter</th>
                           <th>Action Unit</th>
-                          <th>Image</th>
+                          <th>Claim By</th>
                           <th>Status</th>
                           <th>Remark</th>
                           <th>Edit</th>
@@ -46,7 +46,7 @@ include('../middleware/adminMiddleware.php');
                                       <td> <?= $item ['status']; ?></td>
                                       <td> <?= $item ['remark']; ?></td>
                                       <td> 
-                                        <a href="#" class="btn btn-primary" >Edit</a>
+                                        <a href="#" class="btn btn-primary btn-sm" >Edit</a>
                                       </td>
                                   </tr>
                                 <?php
