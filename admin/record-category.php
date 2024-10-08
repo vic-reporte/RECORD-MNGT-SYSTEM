@@ -113,6 +113,15 @@ include('../middleware/adminMiddleware.php');
                                     <option>Supply Unit</option>
                                 </select>
                             </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="select">Release By:</label>
+                                <select class="form-select" name="release_by">
+                                    <option>User 1</option>
+                                    <option>User 2</option>
+                                    
+                                </select>
+                            </div>
                             <div class="col-md-2">
                                 <label for="select">Status:</label>
                                 <select class="form-select" name="status">
