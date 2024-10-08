@@ -48,7 +48,7 @@ include('../middleware/adminMiddleware.php');
                                       <td> <?= $item ['status']; ?></td>
                                       <td> <?= $item ['remark']; ?></td>
                                       <td> 
-                                        <a href="#" class="btn btn-primary btn-sm" >Edit</a>
+                                        <a href="edit-category.php?route_number=<?= $item ['route_number']; ?>" class="btn btn-primary btn-sm" >Edit</a>
                                       </td>
                                   </tr>
                                 <?php

@@ -37,9 +37,9 @@ if (isset($_POST['record_category_btn'])) {
                 $filename = time() . '.' . $image_ext;
 
                 // Insert the new record
-                $insert_query = "INSERT INTO record_unit_data (route_number, record_type, source, subject_matter, action_unit, release_by, status, remark, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                $insert_query = "INSERT INTO record_unit_data (route_number, record_type, source, subject_matter, action_unit, release_by, status, remark, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmt = $con->prepare($insert_query);
-                $stmt->bind_param("ssssssssss", $route_number, $record_type, $source, $subject_matter, $action_unit, $release_by, $status, $remark, $filename);
+                $stmt->bind_param("sssssssss", $route_number, $record_type, $source, $subject_matter, $action_unit, $release_by, $status, $remark, $filename);
 
                 if ($stmt->execute()) {
                     move_uploaded_file($_FILES['image']['tmp_name'], $path . '/' . $filename);
