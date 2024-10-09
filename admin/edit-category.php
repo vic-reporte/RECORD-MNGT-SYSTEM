@@ -15,7 +15,7 @@ include('../middleware/adminMiddleware.php');
 
                 if(mysqli_num_rows($category) > 0 )
                 {
-                    $data = mysqli_fetch_array($category)
+                    $data = mysqli_fetch_array($category);
                 ?>
                     <div class="card">
                         <div class="card-header">
@@ -26,131 +26,132 @@ include('../middleware/adminMiddleware.php');
                                 <class="row">
                                     <div class="col-md-2">
                                         <label for="">Route Number:</label>
-                                        <input type="text" name="route_number" value="<?= $data['route_number'] ?> "placeholder="Enter Route Number" class="form-control">
+                                        <input type="text" name="route_number" value="<?= $data['route_number'] ?>" placeholder="Enter Route Number" class="form-control text-center">
                                     </div>
                                     <div class="col-md-2">
                                         <label for="select">Record Type:</label>
-                                        <select class="form-select" name="record_type">
-                                            <option>APPLICATION FOR GOV'T</option>
-                                            <option>PERMIT</option>
-                                            <option>APPLICATION/PROMOTION</option>
-                                            <option>APPOINTMENT</option>
-                                            <option>BILLS</option>
-                                            <option>BOND</option>
-                                            <option>BUDGET</option>
-                                            <option>REQUIREMENT</option>
-                                            <option>CEDULA</option>
-                                            <option>CERTIFICATION</option>
-                                            <option>CHANGE OF NAME</option>
-                                            <option>CLEARANCE</option>
-                                            <option>COMPLAINT LETTER</option>
-                                            <option>CONFIDENTIAL</option>
-                                            <option>CORRECTION OF ENTRIES</option>
-                                            <option>DIPLOMA</option>
-                                            <option>EMAIL ENDORSEMENT</option>
-                                            <option>ERF</option>
-                                            <option>FORM 4</option>
-                                            <option>FORM 6</option>
-                                            <option>FORM 7</option>
-                                            <option>GAD ACCOMPLISHMENT</option>
-                                            <option>GAD PLAN/BUDGET</option>
-                                            <option>INVITATIONAL</option>
-                                            <option>IOT</option>
-                                            <option>IPCRF/OPCRF</option>
-                                            <option>JOB ORDER CONTRACT</option>
-                                            <option>LETTER</option>
-                                            <option>LOCATOR SLIP</option>
-                                            <option>MATERNITY</option>
-                                            <option>MEMO/ISSUANCES</option>
-                                            <option>MOA</option>
-                                            <option>MONETIZATION</option>
-                                            <option>NOSA</option>
-                                            <option>NOSI</option>
-                                            <option>PERMIT TO STUDY</option>
-                                            <option>PERMIT TO TEACH</option>
-                                            <option>PERTINENTS PAPERS</option>
-                                            <option>PROPOSAL</option>
-                                            <option>QUESTIONNAIRE</option>
-                                            <option>RECLASSIFICATION</option>
-                                            <option>RECOMMENDATION</option>
-                                            <option>REPORT</option>
-                                            <option>REQUEST</option>
-                                            <option>REQUEST FOR TRANSFER</option>
-                                            <option>REQUEST LETTER</option>
-                                            <option>RESEARCH</option>
-                                            <option>RESIGNATION</option>
-                                            <option>RETIREMENT</option>
-                                            <option>RETURN TO DUTY</option>
+                                        <select class="form-select text-center" name="record_type">
+                                            <option <?= ($data['record_type'] == 'APPLICATION/PROMOTION') ? 'selected' : '' ?>>APPLICATION/PROMOTION</option>
+                                            <option <?= ($data['record_type'] == 'PERMIT') ? 'selected' : '' ?>>PERMIT</option>
+                                            <option <?= ($data['record_type'] == 'APPOINTMENT') ? 'selected' : '' ?>>APPOINTMENT</option>
+                                            <option <?= ($data['record_type'] == 'BILLS') ? 'selected' : '' ?>>BILLS</option>
+                                            <option <?= ($data['record_type'] == 'BOND') ? 'selected' : '' ?>>BOND</option>
+                                            <option <?= ($data['record_type'] == 'BUDGET') ? 'selected' : '' ?>>BUDGET</option>
+                                            <option <?= ($data['record_type'] == 'REQUIREMENT') ? 'selected' : '' ?>>REQUIREMENT</option>
+                                            <option <?= ($data['record_type'] == 'CEDULA') ? 'selected' : '' ?>>CEDULA</option>
+                                            <option <?= ($data['record_type'] == 'CERTIFICATION') ? 'selected' : '' ?>>CERTIFICATION</option>
+                                            <option <?= ($data['record_type'] == 'CHANGE OF NAME') ? 'selected' : '' ?>>CHANGE OF NAME</option>
+                                            <option <?= ($data['record_type'] == 'CLEARANCE') ? 'selected' : '' ?>>CLEARANCE</option>
+                                            <option <?= ($data['record_type'] == 'COMPLAINT LETTER') ? 'selected' : '' ?>>COMPLAINT LETTER</option>
+                                            <option <?= ($data['record_type'] == 'CONFIDENTIAL') ? 'selected' : '' ?>>CONFIDENTIAL</option>
+                                            <option <?= ($data['record_type'] == 'CORRECTION OF ENTRIES') ? 'selected' : '' ?>>CORRECTION OF ENTRIES</option>
+                                            <option <?= ($data['record_type'] == 'DIPLOMA') ? 'selected' : '' ?>>DIPLOMA</option>
+                                            <option <?= ($data['record_type'] == 'EMAIL ENDORSEMENT') ? 'selected' : '' ?>>EMAIL ENDORSEMENT</option>
+                                            <option <?= ($data['record_type'] == 'ERF') ? 'selected' : '' ?>>ERF</option>
+                                            <option <?= ($data['record_type'] == 'FORM 4') ? 'selected' : '' ?>>FORM 4</option>
+                                            <option <?= ($data['record_type'] == 'FORM 6') ? 'selected' : '' ?>>FORM 6</option>
+                                            <option <?= ($data['record_type'] == 'FORM 7') ? 'selected' : '' ?>>FORM 7</option>
+                                            <option <?= ($data['record_type'] == 'GAD ACCOMPLISHMENT') ? 'selected' : '' ?>>GAD ACCOMPLISHMENT</option>
+                                            <option <?= ($data['record_type'] == 'GAD PLAN/BUDGET') ? 'selected' : '' ?>>GAD PLAN/BUDGET</option>
+                                            <option <?= ($data['record_type'] == 'INVITATIONAL') ? 'selected' : '' ?>>INVITATIONAL</option>
+                                            <option <?= ($data['record_type'] == 'IOT') ? 'selected' : '' ?>>IOT</option>
+                                            <option <?= ($data['record_type'] == 'IPCRF/OPCRF') ? 'selected' : '' ?>>IPCRF/OPCRF</option>
+                                            <option <?= ($data['record_type'] == 'JOB ORDER CONTRACT') ? 'selected' : '' ?>>JOB ORDER CONTRACT</option>
+                                            <option <?= ($data['record_type'] == 'LETTER') ? 'selected' : '' ?>>LETTER</option>
+                                            <option <?= ($data['record_type'] == 'LOCATOR SLIP') ? 'selected' : '' ?>>LOCATOR SLIP</option>
+                                            <option <?= ($data['record_type'] == 'MATERNITY') ? 'selected' : '' ?>>MATERNITY</option>
+                                            <option <?= ($data['record_type'] == 'MEMO/ISSUANCES') ? 'selected' : '' ?>>MEMO/ISSUANCES</option>
+                                            <option <?= ($data['record_type'] == 'MOA') ? 'selected' : '' ?>>MOA</option>
+                                            <option <?= ($data['record_type'] == 'MONETIZATION') ? 'selected' : '' ?>>MONETIZATION</option>
+                                            <option <?= ($data['record_type'] == 'NOSA') ? 'selected' : '' ?>>NOSA</option>
+                                            <option <?= ($data['record_type'] == 'NOSI') ? 'selected' : '' ?>>NOSI</option>
+                                            <option <?= ($data['record_type'] == 'PERMIT TO STUDY') ? 'selected' : '' ?>>PERMIT TO STUDY</option>
+                                            <option <?= ($data['record_type'] == 'PERMIT TO TEACH') ? 'selected' : '' ?>>PERMIT TO TEACH</option>
+                                            <option <?= ($data['record_type'] == 'PERTINENTS PAPERS') ? 'selected' : '' ?>>PERTINENTS PAPERS</option>
+                                            <option <?= ($data['record_type'] == 'PROPOSAL') ? 'selected' : '' ?>>PROPOSAL</option>
+                                            <option <?= ($data['record_type'] == 'QUESTIONNAIRE') ? 'selected' : '' ?>>QUESTIONNAIRE</option>
+                                            <option <?= ($data['record_type'] == 'RECLASSIFICATION') ? 'selected' : '' ?>>RECLASSIFICATION</option>
+                                            <option <?= ($data['record_type'] == 'RECOMMENDATION') ? 'selected' : '' ?>>RECOMMENDATION</option>
+                                            <option <?= ($data['record_type'] == 'REPORT') ? 'selected' : '' ?>>REPORT</option>
+                                            <option <?= ($data['record_type'] == 'REQUEST') ? 'selected' : '' ?>>REQUEST</option>
+                                            <option <?= ($data['record_type'] == 'REQUEST FOR TRANSFER') ? 'selected' : '' ?>>REQUEST FOR TRANSFER</option>
+                                            <option <?= ($data['record_type'] == 'REQUEST LETTER') ? 'selected' : '' ?>>REQUEST LETTER</option>
+                                            <option <?= ($data['record_type'] == 'RESEARCH') ? 'selected' : '' ?>>RESEARCH</option>
+                                            <option <?= ($data['record_type'] == 'RESIGNATION') ? 'selected' : '' ?>>RESIGNATION</option>
+                                            <option <?= ($data['record_type'] == 'RETIREMENT') ? 'selected' : '' ?>>RETIREMENT</option>
+                                            <option <?= ($data['record_type'] == 'RETURN TO DUTY') ? 'selected' : '' ?>>RETURN TO DUTY</option>
                                         </select>
                                     </div>
                                     <div class="col-md-2">
                                         <label for="select">Source:</label>
-                                        <select class="form-select" name="source" value="<?= $data['source'] ?>">
-                                        <option>Accounting Unit</option>
-                                            <option>Admin</option>
-                                            <option>ASDS</option>
-                                            <option>Budget Unit</option>
-                                            <option>Cash Unit</option>
-                                            <option>CID</option>
-                                            <option>Health</option>
-                                            <option>ICT</option>
-                                            <option>Personnel Unit</option>
-                                            <option>Record Unit</option>
-                                            <option>SDS</option>
-                                            <option>SGOD</option>
-                                            <option>Supply Unit</option>  
+                                        <select class="form-select text-center" name="source">
+                                            <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Accounting Unit</option>
+                                            <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Admin</option>
+                                            <option <?= ($data['source'] == 'ASDS') ? 'selected' : '' ?>>ASDS</option>
+                                            <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Budget Unit</option>
+                                            <option <?= ($data['source'] == 'Budget Unit') ? 'selected' : '' ?>>Cash Unit</option>
+                                            <option <?= ($data['source'] == 'CID') ? 'selected' : '' ?>>CID</option>
+                                            <option <?= ($data['source'] == 'Health') ? 'selected' : '' ?>>Health</option>
+                                            <option <?= ($data['source'] == 'ICT') ? 'selected' : '' ?>>ICT</option>
+                                            <option <?= ($data['source'] == 'Personnel Unit') ? 'selected' : '' ?>>Personnel Unit</option>
+                                            <option <?= ($data['source'] == 'Record Unit') ? 'selected' : '' ?>>Record Unit</option>
+                                            <option <?= ($data['source'] == 'SDS') ? 'selected' : '' ?>>SDS</option>
+                                            <option <?= ($data['source'] == 'SGOD') ? 'selected' : '' ?>>SGOD</option>
+                                            <option <?= ($data['source'] == 'Supply Unit') ? 'selected' : '' ?>>Supply Unit</option>  
                                         </select>
                                     </div>
                                     <div class="mb-2 mt-2">
                                         <label for="">Subject Matter:</label>
-                                        <textarea class="form-control" rows="2" name="subject_matter"> <?= $data['subject_matter'] ?> </textarea>
+                                        <textarea class="form-control" rows="2" name="subject_matter"><?= $data['subject_matter'] ?> </textarea>
                                     </div>
                                     <div class="col-md-2">
                                         <label for="select">Action Unit:</label>
-                                        <select class="form-select" name="action_unit" value="<?= $data['record_type'] ?>">
-                                            <option>Accounting Unit</option>
-                                            <option>Admin</option>
-                                            <option>ASDS</option>
-                                            <option>Budget Unit</option>
-                                            <option>Cash Unit</option>
-                                            <option>CID</option>
-                                            <option>Health</option>
-                                            <option>ICT</option>
-                                            <option>Personnel Unit</option>
-                                            <option>Record Unit</option>
-                                            <option>SDS</option>
-                                            <option>SGOD</option>
-                                            <option>Supply Unit</option>
+                                        <select class="form-select text-center" name="action_unit">
+                                        <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Accounting Unit</option>
+                                            <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Admin</option>
+                                            <option <?= ($data['source'] == 'ASDS') ? 'selected' : '' ?>>ASDS</option>
+                                            <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Budget Unit</option>
+                                            <option <?= ($data['source'] == 'Budget Unit') ? 'selected' : '' ?>>Cash Unit</option>
+                                            <option <?= ($data['source'] == 'CID') ? 'selected' : '' ?>>CID</option>
+                                            <option <?= ($data['source'] == 'Health') ? 'selected' : '' ?>>Health</option>
+                                            <option <?= ($data['source'] == 'ICT') ? 'selected' : '' ?>>ICT</option>
+                                            <option <?= ($data['source'] == 'Personnel Unit') ? 'selected' : '' ?>>Personnel Unit</option>
+                                            <option <?= ($data['source'] == 'Record Unit') ? 'selected' : '' ?>>Record Unit</option>
+                                            <option <?= ($data['source'] == 'SDS') ? 'selected' : '' ?>>SDS</option>
+                                            <option <?= ($data['source'] == 'SGOD') ? 'selected' : '' ?>>SGOD</option>
+                                            <option <?= ($data['source'] == 'Supply Unit') ? 'selected' : '' ?>>Supply Unit</option>  
                                         </select>
                                     </div>
                                     </div>
                                     <div class="col-md-2">
                                         <label for="select">Release By:</label>
-                                        <select class="form-select"  name="release_by" value="<?= $data['release_by'] ?>">
+                                        <select class="form-select text-center"  name="release_by">
                                             <option>User 1</option>
-                                            <option>User 2</option>
+                                            <option <?= ($data['release_by'] == 'User 1') ? 'selected' : '' ?>>User 1</option>
+                                            <option <?= ($data['release_by'] == 'User 2') ? 'selected' : '' ?>>User 2</option>
+                                            <!--option>User 2</!--option-->
                                             
                                         </select>
                                     </div>
                                     <div class="col-md-2">
                                         <label for="select">Status:</label>
-                                        <select class="form-select" name="status" value="<?= $data['status'] ?> ">
-                                            <option>Release</option>
-                                            <option>Cancelled</option>
-                                            <option>Filed</option>
+                                        <select class="form-select text-center" name="status">
+                                            <option <?= ($data['status'] == 'Release') ? 'selected' : '' ?>>Release</option>
+                                            <option <?= ($data['status'] == 'Cancelled') ? 'selected' : '' ?>>Cancelled</option>
+                                            <option <?= ($data['status'] == 'Filed') ? 'selected' : '' ?>>Filed</option>
                                         </select>
                                     </div>
                                     <div class="col-md-2">
                                         <label for="select">Remark:</label>
-                                        <select class="form-select" name="remark" value="<?= $data['remark'] ?> ">
-                                            <option>Release</option>
-                                            <option>Cancelled</option>
-                                            <option>Filed</option>
+                                        <select class="form-select text-center" name="remark">
+                                        <option <?= ($data['status'] == 'Release') ? 'selected' : '' ?>>Release</option>
+                                            <option <?= ($data['status'] == 'Cancelled') ? 'selected' : '' ?>>Cancelled</option>
+                                            <option <?= ($data['status'] == 'Filed') ? 'selected' : '' ?>>Filed</option>
                                         </select>
                                     </div>
                                     <div class="col-md-2">
                                         <label for="">Captured Image</label>
-                                        <input type="file" name="image" value="<?= $data['image'] ?> " class="form-control">
+                                        <input type="file" name="image" class="form-control">
                                         
                                     </div>
                                     <div clas="col-md-12">
@@ -164,7 +165,7 @@ include('../middleware/adminMiddleware.php');
                 }
                 else
                 {
-                    echo "Category Not Found";
+                    echo "Data Category Not Found";
                 }
             }
             else
