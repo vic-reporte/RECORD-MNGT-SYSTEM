@@ -152,7 +152,7 @@ include('../middleware/adminMiddleware.php');
                                     <div class="col-md-2">
                                         <label for="">Captured Image</label>
                                         <input type="file" name="image" class="form-control">
-                                        
+                                        <img src="../uploads/<?= $data ['image']; ?>" alt="<?= $item ['image']; ?>" style="width:50px; height: auto;">
                                     </div>
                                     <div clas="col-md-12">
                                         <button type="submit" class="btn btn-primary mt-3" name="record_category_btn">Save</button>
