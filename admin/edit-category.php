@@ -8,6 +8,7 @@ include('../middleware/adminMiddleware.php');
     <div class="row">
         <div class="col-md-12">
             <?php
+            // This function is to check the route number if set to the url or not and get the all record category through route number
             if(isset($_GET['route_number']))
             {
                 $route_number = $_GET['route_number'];
@@ -25,6 +26,7 @@ include('../middleware/adminMiddleware.php');
                             <form action="code.php" method="POST" enctype="multipart/form-data">
                                 <class="row">
                                     <div class="col-md-2">
+                                        <input type="hidden" name="category_route_number" value="<?= $data['route_number'] ?>">
                                         <label for="">Route Number:</label>
                                         <input type="text" name="route_number" value="<?= $data['route_number'] ?>" placeholder="Enter Route Number" class="form-control text-center">
                                     </div>
@@ -129,8 +131,6 @@ include('../middleware/adminMiddleware.php');
                                             <option>User 1</option>
                                             <option <?= ($data['release_by'] == 'User 1') ? 'selected' : '' ?>>User 1</option>
                                             <option <?= ($data['release_by'] == 'User 2') ? 'selected' : '' ?>>User 2</option>
-                                            <!--option>User 2</!--option-->
-                                            
                                         </select>
                                     </div>
                                     <div class="col-md-2">
@@ -152,10 +152,12 @@ include('../middleware/adminMiddleware.php');
                                     <div class="col-md-2">
                                         <label for="">Captured Image</label>
                                         <input type="file" name="image" class="form-control">
+                                        <label for="">Current Image</label>
+                                        <input type="hidden" name="old_captured_image" value=""<?= $data['image'] ?>>
                                         <img src="../uploads/<?= $data ['image']; ?>" alt="<?= $item ['image']; ?>" style="width:50px; height: auto;">
                                     </div>
                                     <div clas="col-md-12">
-                                        <button type="submit" class="btn btn-primary mt-3" name="record_category_btn">Save</button>
+                                        <button type="submit" class="btn btn-primary mt-3" name="update_category_btn">Update</button>
                                     </div>
                                 </div>
                             </form>
