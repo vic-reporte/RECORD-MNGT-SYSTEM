@@ -15,7 +15,7 @@ if (isset($_POST['add_record_category_btn'])) {
     $remark = $_POST['remark'];
 
     $image = $_FILES['image']['name'];
-    $path = "../uploads";
+    $path = "..".DIRECTORY_SEPARATOR. "uploads";
 
     // Check if the route_number already exists
     $check_query = "SELECT * FROM record_unit_data WHERE route_number = ?";
@@ -42,7 +42,7 @@ if (isset($_POST['add_record_category_btn'])) {
                 $stmt->bind_param("sssssssss", $route_number, $record_type, $source, $subject_matter, $action_unit, $release_by, $status, $remark, $filename);
 
                 if ($stmt->execute()) {
-                    move_uploaded_file($_FILES['image']['tmp_route_number'], $path . '/' . $filename);
+                    move_uploaded_file($_FILES['image']['tmp_route_number'], $path . DIRECTORY_SEPARATOR . $update_filename);
                     redirect("record-category.php", "Record Added Successfully");
                 } else {
                     redirect("record-category.php", "Something Went Wrong With Display");
@@ -69,7 +69,7 @@ else if(isset($_POST['update_category_btn']))
     $remark = $_POST['remark'];
 
     $new_image = $_FILES['image']['name'];
-    $old_captured_image = $_POST['old_captured_mage'];
+    $old_captured_image = $_POST['old_captured_image'];
     
     if($new_image != "")
     {
@@ -81,11 +81,11 @@ else if(isset($_POST['update_category_btn']))
     {
         $update_filename = $old_captured_image;
     }
-    $path = "../uploads";
-        // This function is to update all record category in database
-        $update_query = "UPDATE record_unit_data SET route_number='$route_number', record_type='$record_type', source='$source', subject_matter='$subject_matter', action_unit='$action_unit', release_by='$release_by', status='$status', remark='$remark', image='$update_filename', WHERE route_number='$category_route_number' ";
-
-        $update_query_run = mysqli_query($con, $update_query);
+    $path = ".." .DIRECTORY_SEPARATOR . "uploads";
+        // Update the record in the database HINDI PA NAGANA ANG UPDATE
+        $update_query = "UPDATE record_unit_data SET route_number=?, record_type=?, source=?, subject_matter=?, action_unit=?, release_by=?, status=?, remark=?, image=? WHERE route_number=?";
+        $stmt = $con->prepare($update_query);
+        $stmt->bind_param("ssssssssss", $route_number, $record_type, $source, $subject_matter, $action_unit, $release_by, $status, $remark, $update_filename, $category_route_number);
         {
             if($_FILES['image']['route_number'] != "")
             {
@@ -107,16 +107,19 @@ else if(isset($_POST['delete_caegory_btn']))
 {
     $category_route_number = mysqli_real_escape_string($con, $_POST['category_route_number']);
 
-    $delete_query = "DELETE FROM record_unit_data WHERE route_number='$category_route_number' ";
-    $delete_query_run = mysqli_query($con, $delete_query);
-
-    if($delete_query_run)
+    $delete_query = "DELETE FROM record_unit_data WHERE route_number=?";
+    $stmt = $con->prepare($delete_query);
+    $stmt->bind_param("s", $category_route_number);
+    //--'$category_route_number' ";
+    //--$delete_query_run = mysqli_query($con, $delete_query);//
+    if($stmt->execute())
     {
         redirect("record-category.php", "Category Deleted Successfully");
     }
     else{
         redirect("record-category.php", "Something went wrong ");
     }
+    $stmt->close();
 }
 
 ?>
