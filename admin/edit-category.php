@@ -156,7 +156,7 @@ include('../middleware/adminMiddleware.php');
                                         <input type="file" name="image" class="form-control">
                                         <label for="">Current Image</label>
                                         <input type="hidden" name="old_captured_image" value="<?= $data['image'] ?>">
-                                        <img src="../uploads/<?= $data ['image'] ?>" height=" 50px" width="50px" alt="">
+                                        <img src="../uploads/<?= $data ['image'] ?>" alt="<?= $data ['image']; ?>" style="width:50px; height: auto;">
                                     </div>
                                     <div class="col-md-12">
                                         <button type="submit" class="btn btn-primary btn-sm" name="update_category_btn">Update</button>

@@ -42,7 +42,7 @@ if (isset($_POST['add_record_category_btn'])) {
                 $stmt->bind_param("sssssssss", $route_number, $record_type, $source, $subject_matter, $action_unit, $release_by, $status, $remark, $filename);
 
                 if ($stmt->execute()) {
-                    move_uploaded_file($_FILES['image']['tmp_route_number'], $path . DIRECTORY_SEPARATOR . $update_filename);
+                    move_uploaded_file($_FILES['image']['tmp_name'], $path . DIRECTORY_SEPARATOR . $update_filename);
                     redirect("record-category.php", "Record Added Successfully");
                 } else {
                     redirect("record-category.php", "Something Went Wrong With Display");
@@ -75,21 +75,23 @@ else if(isset($_POST['update_category_btn']))
     {
         $update_filename = $new_image;
         $image_exit = pathinfo($new_image, PATHINFO_EXTENSION);
-        $filename = time().'.'.$image_exit;
+        $update_filename = time().'.'.$image_exit;
     }
     else
     {
         $update_filename = $old_captured_image;
     }
     $path = ".." .DIRECTORY_SEPARATOR . "uploads";
-        // Update the record in the database HINDI PA NAGANA ANG UPDATE
-        $update_query = "UPDATE record_unit_data SET route_number='$route_number', record_type='$record_type', source='$source', subject_matter='$subject_matter', action_unit='$action_uint', release_by='$release_by', status='$status', remark='$remark', image='update_filename' WHERE route_number='$category_route_number' ";
+        
+        $update_query = "UPDATE record_unit_data SET route_number='$route_number', record_type='$record_type', source='$source', subject_matter='$subject_matter', action_unit='$action_uint', release_by='$release_by', status='$status', remark='$remark', image='$update_filename' WHERE route_number='$category_route_number' ";
 
         $update_query_run = mysqli_query($con, $update_query);
+
+        if($update_query_run)
         {
             if($_FILES['image']['route_number'] != "")
             {
-                move_uploaded_file($_FILES['image']['tmp_name'], $path .'/'. $new_image);
+                move_uploaded_file($_FILES['image']['tmp_name'], $path .'/'. $update_filename);
                 if(file_exists("../uploads/".$old_captured_image))
                 {
                     unlink("../uploads/".$old_captured_image);
@@ -112,10 +114,10 @@ else if(isset($_POST['delete_category_btn']))
 
     if($delete_query_run)
     {
-        redirect("add_record-category.php", "Category Deleted Successfully");
+        redirect("record-category.php", "Category Deleted Successfully");
     }
     else{
-        redirect("add_record-category.php", "Something went wrong ");
+        redirect("record-category.php", "Something went wrong ");
     }
     $stmt->close();
 }
