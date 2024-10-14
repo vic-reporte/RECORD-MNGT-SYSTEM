@@ -83,9 +83,6 @@ else if(isset($_POST['update_category_btn']))
     }
     $path = ".." .DIRECTORY_SEPARATOR . "uploads";
         // Update the record in the database HINDI PA NAGANA ANG UPDATE
-        //$update_query = "UPDATE record_unit_data SET route_number=?, record_type=?, source=?, subject_matter=?, action_unit=?, release_by=?, status=?, remark=?, image=? WHERE route_number=?";
-       // $stmt = $con->prepare($update_query);
-        //$stmt->bind_param("ssssssssss", $route_number, $record_type, $source, $subject_matter, $action_unit, $release_by, $status, $remark, $update_filename, $category_route_number);
         $update_query = "UPDATE record_unit_data SET route_number='$route_number', record_type='$record_type', source='$source', subject_matter='$subject_matter', action_unit='$action_uint', release_by='$release_by', status='$status', remark='$remark', image='update_filename' WHERE route_number='$category_route_number' ";
 
         $update_query_run = mysqli_query($con, $update_query);
@@ -110,17 +107,15 @@ else if(isset($_POST['delete_category_btn']))
 {
     $category_route_number = mysqli_real_escape_string($con, $_POST['category_route_number']);
 
-    $delete_query = "DELETE FROM record_unit_data WHERE route_number=?";
-    $stmt = $con->prepare($delete_query);
-    $stmt->bind_param("s", $category_route_number);
-    //--'$category_route_number' ";
-    //--$delete_query_run = mysqli_query($con, $delete_query);//
-    if($stmt->execute())
+    $delete_query = "DELETE FROM record_unit_data WHERE route_number='$category_route_number' ";
+    $delete_query_run = mysqli_query($con, $delete_query);
+
+    if($delete_query_run)
     {
-        redirect("record-category.php", "Category Deleted Successfully");
+        redirect("add_record-category.php", "Category Deleted Successfully");
     }
     else{
-        redirect("record-category.php", "Something went wrong ");
+        redirect("add_record-category.php", "Something went wrong ");
     }
     $stmt->close();
 }

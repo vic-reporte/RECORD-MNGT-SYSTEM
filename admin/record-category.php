@@ -84,6 +84,7 @@ include('../middleware/adminMiddleware.php');
                                     <option>CID</option>
                                     <option>Health</option>
                                     <option>ICT</option>
+                                    <option>Legal Unit</option>
                                     <option>Personnel Unit</option>
                                     <option>Record Unit</option>
                                     <option>SDS</option>
@@ -106,6 +107,7 @@ include('../middleware/adminMiddleware.php');
                                     <option>CID</option>
                                     <option>Health</option>
                                     <option>ICT</option>
+                                    <option>Legal Unit</option>
                                     <option>Personnel Unit</option>
                                     <option>Record Unit</option>
                                     <option>SDS</option>
@@ -143,7 +145,7 @@ include('../middleware/adminMiddleware.php');
                                 <input type="file" name="image" class="form-control">
                             </div>
                             <div clas="col-md-12">
-                                <button type="submit" class="btn btn-primary mt-3" name="record_category_btn">Save</button>
+                                <button type="submit" class="btn btn-primary mt-3" name="add_record_category_btn">Save</button>
                             </div>
                         </div>
                     </form>
