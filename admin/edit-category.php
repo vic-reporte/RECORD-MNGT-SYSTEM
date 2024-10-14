@@ -24,7 +24,7 @@ include('../middleware/adminMiddleware.php');
                         </div>
                         <div class="card-body">
                             <form action="code.php" method="POST" enctype="multipart/form-data">
-                                <class="row">
+                                <div class="row">
                                     <div class="col-md-2">
                                         <input type="hidden" name="category_route_number" value="<?= $data['route_number'] ?>">
                                         <label for="">Route Number:</label>
@@ -88,13 +88,14 @@ include('../middleware/adminMiddleware.php');
                                         <label for="select">Source:</label>
                                         <select class="form-select text-center" name="source">
                                             <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Accounting Unit</option>
-                                            <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Admin</option>
+                                            <option <?= ($data['source'] == 'Admin') ? 'selected' : '' ?>>Admin</option>
                                             <option <?= ($data['source'] == 'ASDS') ? 'selected' : '' ?>>ASDS</option>
-                                            <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Budget Unit</option>
-                                            <option <?= ($data['source'] == 'Budget Unit') ? 'selected' : '' ?>>Cash Unit</option>
+                                            <option <?= ($data['source'] == 'Budget Unit') ? 'selected' : '' ?>>Budget Unit</option>
+                                            <option <?= ($data['source'] == 'Cash Unit') ? 'selected' : '' ?>>Cash Unit</option>
                                             <option <?= ($data['source'] == 'CID') ? 'selected' : '' ?>>CID</option>
                                             <option <?= ($data['source'] == 'Health') ? 'selected' : '' ?>>Health</option>
                                             <option <?= ($data['source'] == 'ICT') ? 'selected' : '' ?>>ICT</option>
+                                            <option <?= ($data['source'] == 'Legal Unit') ? 'selected' : '' ?>>Legal Unit</option>
                                             <option <?= ($data['source'] == 'Personnel Unit') ? 'selected' : '' ?>>Personnel Unit</option>
                                             <option <?= ($data['source'] == 'Record Unit') ? 'selected' : '' ?>>Record Unit</option>
                                             <option <?= ($data['source'] == 'SDS') ? 'selected' : '' ?>>SDS</option>
@@ -110,13 +111,14 @@ include('../middleware/adminMiddleware.php');
                                         <label for="select">Action Unit:</label>
                                         <select class="form-select text-center" name="action_unit">
                                         <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Accounting Unit</option>
-                                            <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Admin</option>
+                                            <option <?= ($data['source'] == 'Admin') ? 'selected' : '' ?>>Admin</option>
                                             <option <?= ($data['source'] == 'ASDS') ? 'selected' : '' ?>>ASDS</option>
-                                            <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Budget Unit</option>
-                                            <option <?= ($data['source'] == 'Budget Unit') ? 'selected' : '' ?>>Cash Unit</option>
+                                            <option <?= ($data['source'] == 'Budget Unit') ? 'selected' : '' ?>>Budget Unit</option>
+                                            <option <?= ($data['source'] == 'Cash Unit') ? 'selected' : '' ?>>Cash Unit</option>
                                             <option <?= ($data['source'] == 'CID') ? 'selected' : '' ?>>CID</option>
                                             <option <?= ($data['source'] == 'Health') ? 'selected' : '' ?>>Health</option>
                                             <option <?= ($data['source'] == 'ICT') ? 'selected' : '' ?>>ICT</option>
+                                            <option <?= ($data['source'] == 'Legal Unit') ? 'selected' : '' ?>>Legal Unit</option>
                                             <option <?= ($data['source'] == 'Personnel Unit') ? 'selected' : '' ?>>Personnel Unit</option>
                                             <option <?= ($data['source'] == 'Record Unit') ? 'selected' : '' ?>>Record Unit</option>
                                             <option <?= ($data['source'] == 'SDS') ? 'selected' : '' ?>>SDS</option>
@@ -153,11 +155,11 @@ include('../middleware/adminMiddleware.php');
                                         <label for="">Captured Image</label>
                                         <input type="file" name="image" class="form-control">
                                         <label for="">Current Image</label>
-                                        <input type="hidden" name="old_captured_image" value=""<?= $data['image'] ?>>
-                                        <img src="../uploads/<?= $data ['image']; ?>" alt="<?= $item ['image']; ?>" style="width:50px; height: auto;">
+                                        <input type="hidden" name="old_captured_image" value="<?= $data['image'] ?>">
+                                        <img src="../uploads/<?= $data ['image'] ?>" height=" 50px" width="50px" alt="">
                                     </div>
-                                    <div clas="col-md-12">
-                                        <button type="submit" class="btn btn-primary mt-3" name="update_category_btn">Update</button>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary btn-sm" name="update_category_btn">Update</button>
                                     </div>
                                 </div>
                             </form>

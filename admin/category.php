@@ -51,7 +51,7 @@ include('../middleware/adminMiddleware.php');
                                         <a href="edit-category.php?route_number=<?= $item ['route_number']; ?>" class="btn btn-primary btn-sm" >Edit</a>
                                         <form action="code.php" method="POST">
                                           <input type="hidden" name="category_route_number" value="<?= $item ['route_number']; ?>">
-                                          <button type="submit" class="btn btn-danger" name="delete_category_btn">Delete</button>
+                                          <button type="submit" class='btn btn-danger btn-sm' name="delete_category_btn">Delete</button>
                                         </form>
                                       </td>
                                   </tr>
