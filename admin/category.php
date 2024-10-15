@@ -43,13 +43,17 @@ include('../middleware/adminMiddleware.php');
                                       <td> <?= $item ['action_unit']; ?></td>
                                       <td> <?= $item ['release_by']; ?></td>
                                       <td>
-                                        <img src="../uploads/<?= $item ['image']; ?>" alt="<?= $item ['image']; ?>" style="width:50px; height: auto;">
+                                        <?php if (!empty($item['image'])): ?>
+                                           <img src="../uploads/<?= $item ['image']; ?>" alt="<?= $item ['image']; ?>" style="width:50px; height: auto;">
+                                        <?php else: ?>  
+                                          <img src="../path/to/default_image.jpg" alt="No image available" style="width:50px; height: auto;">
+                                        <?php endif; ?>
                                       </td>
                                       <td> <?= $item ['status']; ?></td>
                                       <td> <?= $item ['remark']; ?></td>
                                       <td> 
                                         <a href="edit-category.php?route_number=<?= $item ['route_number']; ?>" class="btn btn-primary btn-sm" >Edit</a>
-                                        <form action="code.php" method="POST">
+                                        <form action="code.php" method="POST" style="display:inline-block;">
                                           <input type="hidden" name="category_route_number" value="<?= $item ['route_number']; ?>">
                                           <button type="submit" class="btn btn-danger -btn-sm" name="delete_category_btn">Delete</button>
                                         </form>

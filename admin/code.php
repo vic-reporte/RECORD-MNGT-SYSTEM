@@ -26,7 +26,7 @@ if (isset($_POST['add_record_category_btn'])) {
 
     if ($result->num_rows > 0) {
         // Route number already exists, handle error
-        redirect("record-category.php", "Route number already exists");
+        redirect("add-record-category.php", "Route number already exists");
     } else {
         // Proceed with file validation and insert
         if (!empty($image)) {
@@ -43,16 +43,16 @@ if (isset($_POST['add_record_category_btn'])) {
 
                 if ($stmt->execute()) {
                     move_uploaded_file($_FILES['image']['tmp_name'], $path . DIRECTORY_SEPARATOR . $update_filename);
-                    redirect("record-category.php", "Record Added Successfully");
+                    redirect("add-record-category.php", "Record Added Successfully");
                 } else {
-                    redirect("record-category.php", "Something Went Wrong With Display");
+                    redirect("add-record-category.php", "Something Went Wrong With Display");
                 }
                 $stmt->close();
             } else {
-                redirect("record-category.php", "Invalid File Type");
+                redirect("add-record-category.php", "Invalid File Type");
             }
         } else {
-            redirect("record-category.php", "No File Uploaded");
+            redirect("add-record-category.php", "No File Uploaded");
         }
     }
 }
@@ -114,10 +114,10 @@ else if(isset($_POST['delete_category_btn']))
 
     if($delete_query_run)
     {
-        redirect("record-category.php", "Category Deleted Successfully");
+        redirect("add-record-category.php", "Category Deleted Successfully");
     }
     else{
-        redirect("record-category.php", "Something went wrong ");
+        redirect("add-record-category.php", "Something went wrong ");
     }
     $stmt->close();
 }

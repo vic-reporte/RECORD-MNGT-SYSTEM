@@ -127,7 +127,7 @@ include('../middleware/adminMiddleware.php');
                                         </select>
                                     </div>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-2" style="display:inline-block;">
                                         <label for="select">Release By:</label>
                                         <select class="form-select text-center"  name="release_by">
                                             <option>User 1</option>
@@ -135,7 +135,7 @@ include('../middleware/adminMiddleware.php');
                                             <option <?= ($data['release_by'] == 'User 2') ? 'selected' : '' ?>>User 2</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-2" style="display:inline-block;">
                                         <label for="select">Status:</label>
                                         <select class="form-select text-center" name="status">
                                             <option <?= ($data['status'] == 'Release') ? 'selected' : '' ?>>Release</option>
@@ -143,7 +143,7 @@ include('../middleware/adminMiddleware.php');
                                             <option <?= ($data['status'] == 'Filed') ? 'selected' : '' ?>>Filed</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-2" style="display:inline-block;">
                                         <label for="select">Remark:</label>
                                         <select class="form-select text-center" name="remark">
                                         <option <?= ($data['status'] == 'Release') ? 'selected' : '' ?>>Release</option>
