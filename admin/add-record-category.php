@@ -4,7 +4,7 @@ include('includes/header.php');
 include('../middleware/adminMiddleware.php');
 ?>
 
-<div class="container-fluid py-4">
+<div class="container-fluid py-3">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -13,14 +13,14 @@ include('../middleware/adminMiddleware.php');
                 </div>
                 <div class="card-body">
                     <form action="code.php" method="POST" enctype="multipart/form-data">
-                        <class="row">
-                            <div class="col-md-2">
+                        <div class="row">
+                            <div class="col-md-4">
                                 <label for="">Route Number:</label>
                                 <input type="text" name="route_number" placeholder="Enter Route Number" class="form-control">
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <label for="select">Record Type:</label>
-                                <select class="form-select" name="record_type">
+                                <select class="form-select text-center" name="record_type">
                                     <option>APPLICATION FOR GOV'T</option>
                                     <option>PERMIT</option>
                                     <option>APPLICATION/PROMOTION</option>
@@ -73,9 +73,9 @@ include('../middleware/adminMiddleware.php');
                                     <option>RETURN TO DUTY</option>
                                 </select>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <label for="select">Source:</label>
-                                <select class="form-select" name="source">
+                                <select class="form-select text-center" name="source">
                                 <option>Accounting Unit</option>
                                     <option>Admin</option>
                                     <option>ASDS</option>
@@ -92,11 +92,11 @@ include('../middleware/adminMiddleware.php');
                                     <option>Supply Unit</option>  
                                 </select>
                             </div>
-                            <div class="mb-2 mt-2">
+                            <div class="mb-3 mt-2">
                                 <label for="">Subject Matter:</label>
                                 <textarea class="form-control" rows="2" name="subject_matter"></textarea>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <label for="select">Action Unit:</label>
                                 <select class="form-select" name="action_unit">
                                     <option>Accounting Unit</option>
@@ -116,35 +116,35 @@ include('../middleware/adminMiddleware.php');
                                 </select>
                             </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <label for="select">Release By:</label>
-                                <select class="form-select" name="release_by">
+                                <select class="form-select text-center" name="release_by">
                                     <option>User 1</option>
                                     <option>User 2</option>
                                     
                                 </select>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <label for="select">Status:</label>
-                                <select class="form-select" name="status">
+                                <select class="form-select text-center" name="status">
                                     <option>Release</option>
                                     <option>Cancelled</option>
                                     <option>Filed</option>
                                 </select>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <label for="select">Remark:</label>
-                                <select class="form-select" name="remark">
+                                <select class="form-select text-center" name="remark">
                                     <option>Release</option>
                                     <option>Cancelled</option>
                                     <option>Filed</option>
                                 </select>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4 ">
                                 <label for="">Captured Image</label>
                                 <input type="file" name="image" class="form-control">
                             </div>
-                            <div clas="col-md-12">
+                            <div class="col-md-12">
                                 <button type="submit" class="btn btn-primary mt-3" name="add_record_category_btn">Save</button>
                             </div>
                         </div>

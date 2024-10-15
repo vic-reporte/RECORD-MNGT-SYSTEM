@@ -17,6 +17,9 @@ if (isset($_POST['add_record_category_btn'])) {
     $image = $_FILES['image']['name'];
     $path = "..".DIRECTORY_SEPARATOR. "uploads";
 
+    $iamge_ext = pathinfo($image, PATHINFO_EXTENSION);
+    $filename = time().'.'.$image_ext;
+
     // Check if the route_number already exists
     $check_query = "SELECT * FROM record_unit_data WHERE route_number = ?";
     $stmt_check = $con->prepare($check_query);

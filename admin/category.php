@@ -37,19 +37,19 @@ include('../middleware/adminMiddleware.php');
                                 ?>
                                   <tr>
                                       <td> <?= $item ['route_number']; ?></td>
-                                      <td> <?= $item ['record_type']; ?></td>
+                                      <td> <?= $item['record_type']; ?></td>
                                       <td> <?= $item ['source']; ?></td>
                                       <td> <?= $item ['subject_matter']; ?></td>
                                       <td> <?= $item ['action_unit']; ?></td>
                                       <td> <?= $item ['release_by']; ?></td>
                                       <td>
                                         <?php if (!empty($item['image'])): ?>
-                                           <img src="../uploads/<?= $item ['image']; ?>" alt="<?= $item ['image']; ?>" style="width:50px; height: auto;">
+                                           <img src="../uploads/<?= $item['image']; ?>" alt="<?= $item ['image']; ?>" style="width:50px; height: auto;">
                                         <?php else: ?>  
                                           <img src="../path/to/default_image.jpg" alt="No image available" style="width:50px; height: auto;">
                                         <?php endif; ?>
                                       </td>
-                                      <td> <?= $item ['status']; ?></td>
+                                      <td> <?= $item['status']; ?></td>
                                       <td> <?= $item ['remark']; ?></td>
                                       <td> 
                                         <a href="edit-category.php?route_number=<?= $item ['route_number']; ?>" class="btn btn-primary btn-sm" >Edit</a>
