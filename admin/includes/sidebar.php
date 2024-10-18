@@ -5,7 +5,7 @@
         <span class="ms-1 font-weight-bold text-white">RUMS</span>
       </a>
     </div>
-    <hr class="horizontal light mt-0 mb-2">
+    <hr class="horizontal light mt-0 mb-0">
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">

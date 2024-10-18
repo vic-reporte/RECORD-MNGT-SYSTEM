@@ -28,11 +28,11 @@ include('../middleware/adminMiddleware.php');
                                     <div class="col-md-2">
                                         <input type="hidden" name="category_route_number" value="<?= $data['route_number'] ?>">
                                         <label for="">Route Number:</label>
-                                        <input type="text" name="route_number" value="<?= $data['route_number'] ?>" placeholder="Enter Route Number" class="form-control text-center">
+                                        <input type="text" name="route_number" value="<?= $data['route_number'] ?>" placeholder="Enter Route Number" class="form-control">
                                     </div>
                                     <div class="col-md-2">
                                         <label for="select">Record Type:</label>
-                                        <select class="form-select text-center" name="record_type">
+                                        <select class="form-select" name="record_type">
                                             <option <?= ($data['record_type'] == 'APPLICATION/PROMOTION') ? 'selected' : '' ?>>APPLICATION/PROMOTION</option>
                                             <option <?= ($data['record_type'] == 'PERMIT') ? 'selected' : '' ?>>PERMIT</option>
                                             <option <?= ($data['record_type'] == 'APPOINTMENT') ? 'selected' : '' ?>>APPOINTMENT</option>
@@ -86,7 +86,7 @@ include('../middleware/adminMiddleware.php');
                                     </div>
                                     <div class="col-md-2">
                                         <label for="select">Source:</label>
-                                        <select class="form-select text-center" name="source">
+                                        <select class="form-select" name="source">
                                             <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Accounting Unit</option>
                                             <option <?= ($data['source'] == 'Admin') ? 'selected' : '' ?>>Admin</option>
                                             <option <?= ($data['source'] == 'ASDS') ? 'selected' : '' ?>>ASDS</option>
@@ -111,25 +111,25 @@ include('../middleware/adminMiddleware.php');
                                         <label for="select">Action Unit:</label>
                                         <select class="form-select text-center" name="action_unit">
                                         <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Accounting Unit</option>
-                                            <option <?= ($data['source'] == 'Admin') ? 'selected' : '' ?>>Admin</option>
-                                            <option <?= ($data['source'] == 'ASDS') ? 'selected' : '' ?>>ASDS</option>
-                                            <option <?= ($data['source'] == 'Budget Unit') ? 'selected' : '' ?>>Budget Unit</option>
-                                            <option <?= ($data['source'] == 'Cash Unit') ? 'selected' : '' ?>>Cash Unit</option>
-                                            <option <?= ($data['source'] == 'CID') ? 'selected' : '' ?>>CID</option>
-                                            <option <?= ($data['source'] == 'Health') ? 'selected' : '' ?>>Health</option>
-                                            <option <?= ($data['source'] == 'ICT') ? 'selected' : '' ?>>ICT</option>
-                                            <option <?= ($data['source'] == 'Legal Unit') ? 'selected' : '' ?>>Legal Unit</option>
-                                            <option <?= ($data['source'] == 'Personnel Unit') ? 'selected' : '' ?>>Personnel Unit</option>
-                                            <option <?= ($data['source'] == 'Record Unit') ? 'selected' : '' ?>>Record Unit</option>
-                                            <option <?= ($data['source'] == 'SDS') ? 'selected' : '' ?>>SDS</option>
-                                            <option <?= ($data['source'] == 'SGOD') ? 'selected' : '' ?>>SGOD</option>
-                                            <option <?= ($data['source'] == 'Supply Unit') ? 'selected' : '' ?>>Supply Unit</option>  
+                                            <option <?= ($data['action_unit'] == 'Admin') ? 'selected' : '' ?>>Admin</option>
+                                            <option <?= ($data['action_unit'] == 'ASDS') ? 'selected' : '' ?>>ASDS</option>
+                                            <option <?= ($data['action_unit'] == 'Budget Unit') ? 'selected' : '' ?>>Budget Unit</option>
+                                            <option <?= ($data['action_unit'] == 'Cash Unit') ? 'selected' : '' ?>>Cash Unit</option>
+                                            <option <?= ($data['action_unit'] == 'CID') ? 'selected' : '' ?>>CID</option>
+                                            <option <?= ($data['action_unit'] == 'Health') ? 'selected' : '' ?>>Health</option>
+                                            <option <?= ($data['action_unit'] == 'ICT') ? 'selected' : '' ?>>ICT</option>
+                                            <option <?= ($data['action_unit'] == 'Legal Unit') ? 'selected' : '' ?>>Legal Unit</option>
+                                            <option <?= ($data['action_unit'] == 'Personnel Unit') ? 'selected' : '' ?>>Personnel Unit</option>
+                                            <option <?= ($data['action_unit'] == 'Record Unit') ? 'selected' : '' ?>>Record Unit</option>
+                                            <option <?= ($data['action_unit'] == 'SDS') ? 'selected' : '' ?>>SDS</option>
+                                            <option <?= ($data['action_unit'] == 'SGOD') ? 'selected' : '' ?>>SGOD</option>
+                                            <option <?= ($data['action_unit'] == 'Supply Unit') ? 'selected' : '' ?>>Supply Unit</option>  
                                         </select>
                                     </div>
                                     </div>
                                     <div class="col-md-2" style="display:inline-block;">
                                         <label for="select">Release By:</label>
-                                        <select class="form-select text-center"  name="release_by">
+                                        <select class="form-select"  name="release_by">
                                             <option>User 1</option>
                                             <option <?= ($data['release_by'] == 'User 1') ? 'selected' : '' ?>>User 1</option>
                                             <option <?= ($data['release_by'] == 'User 2') ? 'selected' : '' ?>>User 2</option>
@@ -146,11 +146,15 @@ include('../middleware/adminMiddleware.php');
                                     <div class="col-md-2" style="display:inline-block;">
                                         <label for="select">Remark:</label>
                                         <select class="form-select text-center" name="remark">
-                                        <option <?= ($data['status'] == 'Release') ? 'selected' : '' ?>>Release</option>
-                                            <option <?= ($data['status'] == 'Cancelled') ? 'selected' : '' ?>>Cancelled</option>
-                                            <option <?= ($data['status'] == 'Filed') ? 'selected' : '' ?>>Filed</option>
+                                        <option <?= ($data['remark'] == 'Release') ? 'selected' : '' ?>>Release</option>
+                                            <option <?= ($data['remark'] == 'Cancelled') ? 'selected' : '' ?>>Cancelled</option>
+                                            <option <?= ($data['remark'] == 'Filed') ? 'selected' : '' ?>>Filed</option>
                                         </select>
                                     </div>
+
+                                    <!--div class="col-md-2" style="display:inline-block;">
+                                    <label for="">Created:</label>
+                                    </div-->
                                     <div class="col-md-2">
                                         <label for="">Captured Image</label>
                                         <input type="file" name="image" class="form-control">

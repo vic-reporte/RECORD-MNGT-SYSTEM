@@ -75,7 +75,7 @@ include('../middleware/adminMiddleware.php');
                             </div>
                             <div class="col-md-4">
                                 <label for="select">Source:</label>
-                                <select class="form-select text-center" name="source">
+                                <select class="form-select" name="source">
                                 <option>Accounting Unit</option>
                                     <option>Admin</option>
                                     <option>ASDS</option>
@@ -118,7 +118,7 @@ include('../middleware/adminMiddleware.php');
                             </div>
                             <div class="col-md-4">
                                 <label for="select">Release By:</label>
-                                <select class="form-select text-center" name="release_by">
+                                <select class="form-select" name="release_by">
                                     <option>User 1</option>
                                     <option>User 2</option>
                                     
@@ -126,7 +126,7 @@ include('../middleware/adminMiddleware.php');
                             </div>
                             <div class="col-md-4">
                                 <label for="select">Status:</label>
-                                <select class="form-select text-center" name="status">
+                                <select class="form-select" name="status">
                                     <option>Release</option>
                                     <option>Cancelled</option>
                                     <option>Filed</option>
@@ -134,7 +134,7 @@ include('../middleware/adminMiddleware.php');
                             </div>
                             <div class="col-md-4">
                                 <label for="select">Remark:</label>
-                                <select class="form-select text-center" name="remark">
+                                <select class="form-select" name="remark">
                                     <option>Release</option>
                                     <option>Cancelled</option>
                                     <option>Filed</option>

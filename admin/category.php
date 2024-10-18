@@ -6,13 +6,15 @@ include('../middleware/adminMiddleware.php');
 
 <div class="container-fluid py-4">
     <div class="row">
-        <div class="col-md-12">
+        <!--div class="col-md-10"-->
+        <div class="col-md-10">
             <div class="card">
-              <div class="card-header text-center">
+              <!--div class="card-header text-center"-->
+              <div class="card-header">
                 <h4>Record Unit Data </h4>
               </div>
               <div class="card-body">
-                <table class="table table-secondary table-hover text-center">
+                <table class="table table-secondary table-hover">
                    <thead>
                       <tr>
                           <th>Route Number</th>
@@ -24,6 +26,7 @@ include('../middleware/adminMiddleware.php');
                           <th>Claim By</th>
                           <th>Status</th>
                           <th>Remark</th>
+                          <th>Create At</th>
                           <th>Action</th>
                       </tr>
                    </thead>
@@ -51,6 +54,7 @@ include('../middleware/adminMiddleware.php');
                                       </td>
                                       <td> <?= $item['status']; ?></td>
                                       <td> <?= $item ['remark']; ?></td>
+                                      <td> <?= $item ['created_at']; ?></td>
                                       <td> 
                                         <a href="edit-category.php?route_number=<?= $item ['route_number']; ?>" class="btn btn-primary btn-sm" >Edit</a>
                                         <form action="code.php" method="POST" style="display:inline-block;">
@@ -64,13 +68,13 @@ include('../middleware/adminMiddleware.php');
                           }
                           else
                           {
-                              echo "<tr><td colspan='9'>No Records Found</td></tr>";
+                              echo "<tr><td colspan='10'>No Records Found</td></tr>";
                           }
                         ?>
                     </tbody>
                 </table>
               </div>  
-            </div>
+            </!div>
         </div>
     </div>
 </div>
