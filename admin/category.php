@@ -4,7 +4,7 @@ include('includes/header.php');
 include('../middleware/adminMiddleware.php');
 ?>
 
-<div class="container-fluid py-4">
+<div class="container-fluid py-2">
     <div class="row">
         <!--div class="col-md-10"-->
         <div class="col-md-10">
@@ -73,10 +73,9 @@ include('../middleware/adminMiddleware.php');
                         ?>
                     </tbody>
                 </table>
-              </div>  
-            </!div>
+              </div> 
+            </div>
         </div>
     </div>
 </div>
-
 <?php include('includes/footer.php'); ?>

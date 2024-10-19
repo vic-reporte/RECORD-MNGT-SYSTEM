@@ -140,5 +140,4 @@ else if(isset($_POST['delete_category_btn']))
     }
     $stmt->close();
 }
-
 ?>
