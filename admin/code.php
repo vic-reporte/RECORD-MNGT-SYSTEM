@@ -119,11 +119,20 @@ else if(isset($_POST['delete_category_btn']))
 {
     $category_route_number = mysqli_real_escape_string($con, $_POST['category_route_number']);
 
+    $category_query = "SELECT * FROM record_unit_data WHERE route_number='route_number' ";
+    $category_query_run = mysqli_query($con, $category_query);
+    $category_data = mysqli_fetch_array($category_query_run);
+    $image = $category_data['image'];
+
     $delete_query = "DELETE FROM record_unit_data WHERE route_number='$category_route_number' ";
     $delete_query_run = mysqli_query($con, $delete_query);
 
     if($delete_query_run)
     {
+        if(file_exists("../uploads/".$image))
+            {
+                unlink("../uploads/".$image);
+            }
         redirect("add-record-category.php", "Category Deleted Successfully");
     }
     else{
