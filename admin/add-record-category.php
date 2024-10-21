@@ -128,6 +128,7 @@ include('../middleware/adminMiddleware.php');
                                 <label for="select">Status:</label>
                                 <select class="form-select" name="status">
                                     <option>Release</option>
+                                    <option>For Release</option>
                                     <option>Cancelled</option>
                                     <option>Filed</option>
                                 </select>

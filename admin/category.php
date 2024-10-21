@@ -26,7 +26,7 @@ include('../middleware/adminMiddleware.php');
                           <th>Claim By</th>
                           <th>Status</th>
                           <th>Remark</th>
-                          <th>Create At</th>
+                          <!--th>Create At</th-->
                           <th>Action</th>
                       </tr>
                    </thead>
@@ -54,9 +54,9 @@ include('../middleware/adminMiddleware.php');
                                       </td>
                                       <td> <?= $item['status']; ?></td>
                                       <td> <?= $item ['remark']; ?></td>
-                                      <td> <?= $item ['created_at']; ?></td>
+                                      <!--td> <!-?= $item ['created_at']; ?></td-->
                                       <td> 
-                                        <a href="edit-category.php?route_number=<?= $item ['route_number']; ?>" class="btn btn-primary btn-sm" >Edit</a>
+                                        <a href="edit-category.php?route_number=<?= $item ['route_number']; ?>" class="btn btn-primary" >Edit</a>
                                         <form action="code.php" method="POST" style="display:inline-block;">
                                           <input type="hidden" name="category_route_number" value="<?= $item ['route_number']; ?>">
                                           <button type="submit" class="btn btn-danger -btn-sm" name="delete_category_btn">Delete</button>
@@ -73,6 +73,9 @@ include('../middleware/adminMiddleware.php');
                         ?>
                     </tbody>
                 </table>
+                <div>
+                  
+                </div>
               </div> 
             </div>
         </div>

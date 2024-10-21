@@ -139,6 +139,7 @@ include('../middleware/adminMiddleware.php');
                                         <label for="select">Status:</label>
                                         <select class="form-select text-center" name="status">
                                             <option <?= ($data['status'] == 'Release') ? 'selected' : '' ?>>Release</option>
+                                            <option <?= ($data['status'] == 'For Release') ? 'selected' : '' ?>>For Release</option>
                                             <option <?= ($data['status'] == 'Cancelled') ? 'selected' : '' ?>>Cancelled</option>
                                             <option <?= ($data['status'] == 'Filed') ? 'selected' : '' ?>>Filed</option>
                                         </select>
@@ -146,7 +147,7 @@ include('../middleware/adminMiddleware.php');
                                     <div class="col-md-2" style="display:inline-block;">
                                         <label for="select">Remark:</label>
                                         <select class="form-select text-center" name="remark">
-                                        <option <?= ($data['remark'] == 'Release') ? 'selected' : '' ?>>Release</option>
+                                            <option <?= ($data['remark'] == 'Release') ? 'selected' : '' ?>>Release</option>
                                             <option <?= ($data['remark'] == 'Cancelled') ? 'selected' : '' ?>>Cancelled</option>
                                             <option <?= ($data['remark'] == 'Filed') ? 'selected' : '' ?>>Filed</option>
                                         </select>
