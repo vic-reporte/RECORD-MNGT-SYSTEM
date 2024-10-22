@@ -2,7 +2,7 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=groups" />
+      <!--link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=groups" /-->
         <span class="ms-1 font-weight-bold text-white">RUMS</span>
       </a>
     </div>
@@ -34,14 +34,14 @@
           </a>
         </li>
         </li>
-        <li class="nav-item">
+        <!--li class="nav-item">
           <a class="nav-link text-white " href="users.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-symbols-outlined">groups</i>
             </div>
             <span class="nav-link-text ms-1">Users</span>
           </a>
-        </li>
+        </li-->
       </ul>
     </div>
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">
