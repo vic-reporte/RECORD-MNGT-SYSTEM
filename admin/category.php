@@ -10,7 +10,7 @@ include('../middleware/adminMiddleware.php');
             <div class="card">
               <div class="card-header">
                 <h2>Record Unit Data 
-                  <a href="add-record-category.php" class="btn btn-info float-end">Add Records</a>
+                  <a href="add-record.php" class="btn btn-info float-end">Add Records</a>
                 </h2>
               </div>
               <div class="card-body">
