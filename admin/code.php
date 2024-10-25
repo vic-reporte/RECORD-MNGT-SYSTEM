@@ -4,7 +4,7 @@ session_start();
 include('../config/dbcon.php');
 include('../functions/myfunctions.php');
 
-if (isset($_POST['add_record_category_btn'])) {
+if (isset($_POST['add_record_btn'])) {
     $route_number = $_POST['route_number'];
     $record_type = $_POST['record_type'];
     $source = $_POST['source'];
@@ -29,7 +29,7 @@ if (isset($_POST['add_record_category_btn'])) {
 
     if ($result->num_rows > 0) {
         // Route number already exists, handle error
-        redirect("add-record-category.php", "Route number already exists");
+        redirect("add-record.php", "Route number already exists");
     } else {
         // Proceed with file validation and insert
         if (!empty($image)) {
@@ -52,16 +52,16 @@ if (isset($_POST['add_record_category_btn'])) {
                 if ($stmt->execute()) {
                     //move_uploaded_file($_FILES['image']['tmp_name'], $path . DIRECTORY_SEPARATOR . $update_filename);
                     move_uploaded_file($_FILES['image']['tmp_name'], $path . DIRECTORY_SEPARATOR . $filename);
-                    redirect("add-record-category.php", "Record Added Successfully");
+                    redirect("add-record.php", "Record Added Successfully");
                 } else {
-                    redirect("add-record-category.php", "Something Went Wrong With Display");
+                    redirect("add-record.php", "Something Went Wrong With Display");
                 }
                 $stmt->close();
             } else {
-                redirect("add-record-category.php", "Invalid File Type");
+                redirect("add-record.php", "Invalid File Type");
             }
         } else {
-            redirect("add-record-category.php", "No File Uploaded");
+            redirect("add-record.php", "No File Uploaded");
         }
     }
 }
@@ -133,10 +133,10 @@ else if(isset($_POST['delete_category_btn']))
             {
                 unlink("../uploads/".$image);
             }
-        redirect("add-record-category.php", "Category Deleted Successfully");
+        redirect("add-record.php", "Category Deleted Successfully");
     }
     else{
-        redirect("add-record-category.php", "Something went wrong ");
+        redirect("add-record.php", "Something went wrong ");
     }
     $stmt->close();
 }

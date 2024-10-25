@@ -7,9 +7,11 @@ include('../middleware/adminMiddleware.php');
 <div class="container-fluid py-2">
     <div class="row">
         <div class="col-md-10">
-            <!--div class="card"-->
-              <div class="card-header text-center">
-                <h2>Record Unit Data </h2> <br>
+            <div class="card">
+              <div class="card-header">
+                <h2>Record Unit Data 
+                  <a href="add-record-category.php" class="btn btn-info float-end">Add Records</a>
+                </h2>
               </div>
               <div class="card-body">
                 <table class="table table-secondary table-hover">
@@ -70,10 +72,7 @@ include('../middleware/adminMiddleware.php');
                           }
                         ?>
                     </tbody>
-                </table>
-                <div>
-                  
-                </div>
+                </table> 
               </div> 
             </div>
         </div>
