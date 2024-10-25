@@ -7,9 +7,9 @@ include('../middleware/adminMiddleware.php');
 <div class="container-fluid py-2">
     <div class="row">
         <div class="col-md-10">
-            <div class="card">
-              <div class="card-header">
-                <h4>Record Unit Data </h4>
+            <!--div class="card"-->
+              <div class="card-header text-center">
+                <h2>Record Unit Data </h2> <br>
               </div>
               <div class="card-body">
                 <table class="table table-secondary table-hover">

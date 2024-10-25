@@ -9,7 +9,8 @@ include('../middleware/adminMiddleware.php');
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Add Record Category</h4>
+                    <h4>Add Record Category <a href="index.php" class="btn btn-danger float-end">BACK</a>
+                </h4>
                 </div>
                 <div class="card-body">
                     <form action="code.php" method="POST" enctype="multipart/form-data">
@@ -146,7 +147,8 @@ include('../middleware/adminMiddleware.php');
                                 <input type="file" name="image" class="form-control">
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary mt-3" name="add_record_category_btn">Save</button>
+                                <!--button type="submit" name="add_record_category_btn" class="btn btn-primary mt-3">Save</!--button-->
+                                <button type="submit" name="save" class="btn btn-info mt-3">Save</button>
                             </div>
                         </div>
                     </form>
@@ -157,3 +159,71 @@ include('../middleware/adminMiddleware.php');
 </div>
 
 <?php include('includes/footer.php'); ?>
+
+<!--?php
+
+include('includes/header.php');
+include('../middleware/adminMiddleware.php');
+//include('../includes/header.php');
+//include('.middleware/adminMiddleware.php');
+?>
+
+    <div class="container">
+        <div class="row">
+            <div class="col md-12">
+                <div class="card-header">
+                    <h4>Add Record <a href="index.php" class="btn btn-danger float-end">BACK</a>
+                </h4>
+                </div>
+                <div class="card-body">
+                    <form action="code.php" method="POST">
+                        <div class="mb-3">
+                            <label>Record Number</label>
+                            <input type="text" name="route_number" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Record Type</label>
+                            <input type="text" name="record_type" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Source</label>
+                            <input type="text" name="source" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Subject Matter</label>
+                            <input type="text" name="subject_matter" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Action Unit</label>
+                            <input type="text" name="action_unit" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Release By</label>
+                            <input type="text" name="release_by" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Claim By</label>
+                            <input type="text" name="claim_by" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Status</label>
+                            <input type="text" name="status" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Remark</label>
+                            <input type="text" name="remark" class="form-control">
+                        </div>
+                        <div class="col-md-4 ">
+                            <label for="">Captured Image</label>
+                            <input type="file" name="image" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-primary mt-3" name="add_record_category_btn">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!?php include('includes/footer.php'); ?>
