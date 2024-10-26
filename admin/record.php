@@ -10,7 +10,7 @@ include('../middleware/adminMiddleware.php');
             <div class="card">
               <div class="card-header">
                 <h2>Record Unit Data 
-                  <a href="add-record.php" class="btn btn-info float-end">Add Records</a>
+                  <a href="create-record.php" class="btn btn-info float-end">Create Records</a>
                 </h2>
               </div>
               <div class="card-body">
@@ -32,10 +32,10 @@ include('../middleware/adminMiddleware.php');
                    </thead>
                     <tbody>
                       <?php
-                          $category = getAll('Record Unit data');
-                          if(!empty($category))
+                          $record = getAll('Record Unit data');
+                          if(!empty($record))
                           {
-                            foreach($category as $item)
+                            foreach($record as $item)
                             {
                                 ?>
                                   <tr>

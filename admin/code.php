@@ -4,7 +4,7 @@ session_start();
 include('../config/dbcon.php');
 include('../functions/myfunctions.php');
 
-if (isset($_POST['add_record_btn'])) {
+if (isset($_POST['create_record_btn'])) {
     $route_number = $_POST['route_number'];
     $record_type = $_POST['record_type'];
     $source = $_POST['source'];
@@ -29,7 +29,7 @@ if (isset($_POST['add_record_btn'])) {
 
     if ($result->num_rows > 0) {
         // Route number already exists, handle error
-        redirect("add-record.php", "Route number already exists");
+        redirect("create-record.php", "Route number already exists");
     } else {
         // Proceed with file validation and insert
         if (!empty($image)) {
@@ -52,16 +52,16 @@ if (isset($_POST['add_record_btn'])) {
                 if ($stmt->execute()) {
                     //move_uploaded_file($_FILES['image']['tmp_name'], $path . DIRECTORY_SEPARATOR . $update_filename);
                     move_uploaded_file($_FILES['image']['tmp_name'], $path . DIRECTORY_SEPARATOR . $filename);
-                    redirect("add-record.php", "Record Added Successfully");
+                    redirect("create-record.php", "Record Create Successfully");
                 } else {
-                    redirect("add-record.php", "Something Went Wrong With Display");
+                    redirect("create-record.php", "Something Went Wrong With Display");
                 }
                 $stmt->close();
             } else {
-                redirect("add-record.php", "Invalid File Type");
+                redirect("create-record.php", "Invalid File Type");
             }
         } else {
-            redirect("add-record.php", "No File Uploaded");
+            redirect("create-record.php", "No File Uploaded");
         }
     }
 }
@@ -115,7 +115,7 @@ else if(isset($_POST['update_record_btn']))
         }
         
 }
-else if(isset($_POST['delete_category_btn']))
+else if(isset($_POST['delete_record_btn']))
 {
     $record_route_number = mysqli_real_escape_string($con, $_POST['record_route_number']);
 
@@ -133,10 +133,10 @@ else if(isset($_POST['delete_category_btn']))
             {
                 unlink("../uploads/".$image);
             }
-        redirect("add-record.php", "Record Deleted Successfully");
+        redirect("create-record.php", "Record Deleted Successfully");
     }
     else{
-        redirect("add-record.php", "Something went wrong ");
+        redirect("create-record.php", "Something went wrong ");
     }
     $stmt->close();
 }
