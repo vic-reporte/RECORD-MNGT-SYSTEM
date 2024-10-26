@@ -9,7 +9,7 @@ include('../middleware/adminMiddleware.php');
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Add Record Category <a href="index.php" class="btn btn-danger float-end">BACK</a>
+                    <h4>Add Record <a href="index-dashboard.php" class="btn btn-danger float-end">BACK</a>
                 </h4>
                 </div>
                 <div class="card-body">
@@ -147,7 +147,7 @@ include('../middleware/adminMiddleware.php');
                                 <input type="file" name="image" class="form-control">
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" name="save" class="btn btn-info mt-3">Save</button>
+                                <button type="submit" name="save" class="btn btn-info mt-3">Save Record</button>
                             </div>
                         </div>
                     </form>

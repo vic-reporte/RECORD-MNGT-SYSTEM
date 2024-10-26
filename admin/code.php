@@ -65,9 +65,9 @@ if (isset($_POST['add_record_btn'])) {
         }
     }
 }
-else if(isset($_POST['update_category_btn']))
+else if(isset($_POST['update_record_btn']))
 {
-    $category_route_number = $_POST['category_route_number'];
+    $record_route_number = $_POST['record_route_number'];
     $route_number = $_POST['route_number'];
     $record_type = $_POST['record_type'];
     $source = $_POST['source'];
@@ -93,7 +93,7 @@ else if(isset($_POST['update_category_btn']))
     }
     $path = ".." .DIRECTORY_SEPARATOR . "uploads";
         
-        $update_query = "UPDATE record_unit_data SET route_number='$route_number', record_type='$record_type', source='$source', subject_matter='$subject_matter', action_unit='$action_unit', release_by='$release_by', status='$status', remark='$remark', image='$update_filename' WHERE route_number='$category_route_number' ";
+        $update_query = "UPDATE record_unit_data SET route_number='$route_number', record_type='$record_type', source='$source', subject_matter='$subject_matter', action_unit='$action_unit', release_by='$release_by', status='$status', remark='$remark', image='$update_filename' WHERE route_number='$record_route_number' ";
 
         $update_query_run = mysqli_query($con, $update_query);
 
@@ -107,24 +107,24 @@ else if(isset($_POST['update_category_btn']))
                     unlink("../uploads/".$old_captured_image);
                 }
             }
-            redirect("edit-category.php?route_number=$category_route_number", "Category Updated Successfully");
+            redirect("edit-record.php?route_number=$record_route_number", "Record Updated Successfully");
         }
         
         {
-            redirect("edit-category.php?route_number=$category_route_number", "Something Went Wrong");
+            redirect("edit-record.php?route_number=$record_route_number", "Something Went Wrong");
         }
         
 }
 else if(isset($_POST['delete_category_btn']))
 {
-    $category_route_number = mysqli_real_escape_string($con, $_POST['category_route_number']);
+    $record_route_number = mysqli_real_escape_string($con, $_POST['record_route_number']);
 
-    $category_query = "SELECT * FROM record_unit_data WHERE route_number='route_number' ";
-    $category_query_run = mysqli_query($con, $category_query);
-    $category_data = mysqli_fetch_array($category_query_run);
-    $image = $category_data['image'];
+    $record_query = "SELECT * FROM record_unit_data WHERE route_number='route_number' ";
+    $record_query_run = mysqli_query($con, $record_query);
+    $record_data = mysqli_fetch_array($record_query_run);
+    $image = $record_data['image'];
 
-    $delete_query = "DELETE FROM record_unit_data WHERE route_number='$category_route_number' ";
+    $delete_query = "DELETE FROM record_unit_data WHERE route_number='$record_route_number' ";
     $delete_query_run = mysqli_query($con, $delete_query);
 
     if($delete_query_run)
@@ -133,7 +133,7 @@ else if(isset($_POST['delete_category_btn']))
             {
                 unlink("../uploads/".$image);
             }
-        redirect("add-record.php", "Category Deleted Successfully");
+        redirect("add-record.php", "Record Deleted Successfully");
     }
     else{
         redirect("add-record.php", "Something went wrong ");

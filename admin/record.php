@@ -56,10 +56,10 @@ include('../middleware/adminMiddleware.php');
                                       <td> <?= $item ['remark']; ?></td>
                                       <!--td> <!-?= $item ['created_at']; ?></td-->
                                       <td> 
-                                        <a href="edit-category.php?route_number=<?= $item ['route_number']; ?>" class="btn btn-primary" >Edit</a>
+                                        <a href="edit-record.php?route_number=<?= $item ['route_number']; ?>" class="btn btn-primary" >Edit</a>
                                         <form action="code.php" method="POST" style="display:inline-block;">
-                                          <input type="hidden" name="category_route_number" value="<?= $item ['route_number']; ?>">
-                                          <button type="submit" class="btn btn-danger -btn-sm" name="delete_category_btn">Delete</button>
+                                          <input type="hidden" name="record_route_number" value="<?= $item ['route_number']; ?>">
+                                          <button type="submit" class="btn btn-danger -btn-sm" name="delete_record_btn">Delete</button>
                                         </form>
                                       </td>
                                   </tr>
