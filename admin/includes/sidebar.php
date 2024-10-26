@@ -6,11 +6,11 @@
         <span class="ms-1 font-weight-bold text-white">RUMS</span>
       </a>
     </div>
-    <hr class="horizontal light mt-0 mb-0">
+    <hr class="horizontal light mt-0 mb-0 mr-0">
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white " href="add-record.php">
+          <a class="nav-link text-white " href="index-dashboard.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
             </div>
@@ -26,7 +26,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="add-record.php">
+          <a class="nav-link text-white " href="create-record.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>

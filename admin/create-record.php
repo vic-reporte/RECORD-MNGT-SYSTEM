@@ -9,11 +9,11 @@ include('../middleware/adminMiddleware.php');
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Create Record <a href="index-dashboard.php" class="btn btn-danger float-end">BACK</a>
+                    <h4>Create Record <a href="record.php" class="btn btn-danger float-end">BACK</a>
                 </h4>
                 </div>
                 <div class="card-body">
-                    <form action="code.php" method="POST" enctype="multipart/form-data">
+                    <form action="record.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-4">
                                 <label for="">Route Number:</label>
