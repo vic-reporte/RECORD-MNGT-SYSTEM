@@ -20,7 +20,9 @@ include('../middleware/adminMiddleware.php');
                 ?>
                     <div class="card">
                         <div class="card-header">
-                            <h4>Edit Record</h4>
+                            <h4>Edit Record 
+                                <a href="record.php" class="btn btn-danger float-end">BACK</a>
+                            </h4>
                         </div>
                         <div class="card-body">
                             <form action="code.php" method="POST" enctype="multipart/form-data">
@@ -164,7 +166,7 @@ include('../middleware/adminMiddleware.php');
                                         <img src="../uploads/<?= $data ['image'] ?>" alt="<?= $data ['image']; ?>" style="width:50px; height: auto;">
                                     </div>
                                     <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary btn-sm" name="update_record_btn">Update</button>
+                                        <button type="submit" class="btn btn-success btn-sm" name="update_record_btn">Update</button>
                                     </div>
                                 </div>
                             </form>
