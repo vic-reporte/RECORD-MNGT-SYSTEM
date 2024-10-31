@@ -17,12 +17,12 @@ include('../middleware/adminMiddleware.php');
                     <form action="record.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="">Route Number:</label>
-                                <input type="text" name="route_number" placeholder="Enter Route Number" class="form-control">
+                                <label class="mb-0">Route Number:</label>
+                                <input type="text" name="route_number" placeholder="Enter Route Number" class="form-control mb-2">
                             </div>
                             <div class="col-md-4">
                                 <label for="select">Record Type:</label>
-                                <select class="form-select text-center" name="record_type">
+                                <select class="form-select mb-2" name="record_type">
                                     <option>APPLICATION FOR GOV'T</option>
                                     <option>PERMIT</option>
                                     <option>APPLICATION/PROMOTION</option>
@@ -77,7 +77,7 @@ include('../middleware/adminMiddleware.php');
                             </div>
                             <div class="col-md-4">
                                 <label for="select">Source:</label>
-                                <select class="form-select" name="source">
+                                <select class="form-select mb-2" name="source">
                                 <option>Accounting Unit</option>
                                     <option>Admin</option>
                                     <option>ASDS</option>
@@ -96,11 +96,11 @@ include('../middleware/adminMiddleware.php');
                             </div>
                             <div class="mb-3 mt-2">
                                 <label for="">Subject Matter:</label>
-                                <textarea class="form-control" rows="2" name="subject_matter"></textarea>
+                                <textarea class="form-control mb-2" rows="2" name="subject_matter"></textarea>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <label for="select">Action Unit:</label>
-                                <select class="form-select" name="action_unit">
+                                <select class="form-select mb-2" name="action_unit">
                                     <option>Accounting Unit</option>
                                     <option>Admin</option>
                                     <option>ASDS</option>
@@ -118,26 +118,26 @@ include('../middleware/adminMiddleware.php');
                                 </select>
                             </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <label for="select">Release By:</label>
-                                <select class="form-select" name="release_by">
+                                <select class="form-select mb-2" name="release_by">
                                     <option>User 1</option>
                                     <option>User 2</option>
                                     
                                 </select>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-43>
                                 <label for="select">Status:</label>
-                                <select class="form-select" name="status">
+                                <select class="form-select mb-2" name="status">
                                     <option>Release</option>
                                     <option>For Release</option>
                                     <option>Cancelled</option>
                                     <option>Filed</option>
                                 </select>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <label for="select">Remark:</label>
-                                <select class="form-select" name="remark">
+                                <select class="form-select mb-2" name="remark">
                                     <option>Release</option>
                                     <option>Cancelled</option>
                                     <option>Filed</option>
@@ -145,7 +145,7 @@ include('../middleware/adminMiddleware.php');
                             </div>
                             <div class="col-md-4 ">
                                 <label for="">Captured Image</label>
-                                <input type="file" name="image" class="form-control">
+                                <input type="file" name="image" class="form-control mb-2">
                             </div>
                             <div class="col-md-12">
                                 <button type="submit" name="save" class="btn btn-info mt-3">Save Record</button>

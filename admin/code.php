@@ -133,11 +133,12 @@ else if(isset($_POST['delete_record_btn']))
             {
                 unlink("../uploads/".$image);
             }
-        redirect("create-record.php", "Record Deleted Successfully");
+        redirect("record.php", "Record Deleted Successfully");
+        //echo 200;
     }
     else{
-        redirect("create-record.php", "Something went wrong ");
+        redirect("record.php", "Something went wrong ");
+        //echo 500;
     }
     $stmt->close();
 }
-?>
