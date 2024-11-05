@@ -119,6 +119,13 @@ include('../middleware/adminMiddleware.php');
                             </div>
                             </div>
                             <div class="col-md-3">
+                                <label for="select">Created By:</label>
+                                <select class="form-select mb-2" name="created_by">
+                                    <option>User 1</option>
+                                    <option>User 2</option>
+                                    
+                                </select>
+                            <div class="col-md-3">
                                 <label for="select">Release By:</label>
                                 <select class="form-select mb-2" name="release_by">
                                     <option>User 1</option>

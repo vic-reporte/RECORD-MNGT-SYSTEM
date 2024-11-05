@@ -130,6 +130,13 @@ include('../middleware/adminMiddleware.php');
                                     </div>
                                     </div>
                                     <div class="col-md-4" style="display:inline-block;">
+                                        <label for="select">Modified By:</label>
+                                        <select class="form-select"  name="modified_by" class="control-form mb-2">
+                                            <option>User 1</option>
+                                            <option <?= ($data['release_by'] == 'User 1') ? 'selected' : '' ?>>User 1</option>
+                                            <option <?= ($data['release_by'] == 'User 2') ? 'selected' : '' ?>>User 2</option>
+                                        </select>
+                                    <div class="col-md-4" style="display:inline-block;">
                                         <label for="select">Release By:</label>
                                         <select class="form-select"  name="release_by" class="control-form mb-2">
                                             <option>User 1</option>
@@ -154,10 +161,6 @@ include('../middleware/adminMiddleware.php');
                                             <option <?= ($data['remark'] == 'Filed') ? 'selected' : '' ?>>Filed</option>
                                         </select>
                                     </div>
-
-                                    <!--div class="col-md-2" style="display:inline-block;">
-                                    <label for="">Created:</label>
-                                    </div-->
                                     <div class="col-md-4">
                                         <label for="">Captured Image</label>
                                         <input type="file" name="image" class="form-control mb-2">

@@ -23,12 +23,13 @@ include('../middleware/adminMiddleware.php');
                           <th>Source</th>
                           <th>Subject Matter</th>
                           <th>Action Unit</th>
+                          <!--th>Modified By</--th-->
+                          <!--th>Created By</!--th-->
                           <th>Release By</th>
                           <!--th>Release At</th-->
                           <th>Claim By</th>
                           <th>Status</th>
                           <th>Remark</th>
-                          <!--th>Create At</th-->
                           <th>Action</th>
                       </tr>
                    </thead>
@@ -46,6 +47,8 @@ include('../middleware/adminMiddleware.php');
                                       <td> <?= $item['source']; ?></td>
                                       <td> <?= $item['subject_matter']; ?></td>
                                       <td> <?= $item['action_unit']; ?></td>
+                                      <!--td> <?= $item['modified_by']; ?></!--td-->
+                                      <!--td> <?= $item['created_by']; ?></!--td-->
                                       <td> <?= $item['release_by']; ?></td>
                                       <!--td> <!?= $item['release_at']; ?><td-->
                                       <td>
