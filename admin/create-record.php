@@ -78,7 +78,7 @@ include('../middleware/adminMiddleware.php');
                             <div class="col-md-4">
                                 <label for="select">Source:</label>
                                 <select class="form-select mb-2" name="source">
-                                <option>Accounting Unit</option>
+                                    <option>Accounting Unit</option>
                                     <option>Admin</option>
                                     <option>ASDS</option>
                                     <option>Budget Unit</option>
@@ -133,7 +133,7 @@ include('../middleware/adminMiddleware.php');
                                     
                                 </select>
                             </div>
-                            <div class="col-md-43>
+                            <div class="col-md-3">
                                 <label for="select">Status:</label>
                                 <select class="form-select mb-2" name="status">
                                     <option>Release</option>
@@ -150,7 +150,7 @@ include('../middleware/adminMiddleware.php');
                                     <option>Filed</option>
                                 </select>
                             </div>
-                            <div class="col-md-4 ">
+                            <div class="col-md-4">
                                 <label for="">Captured Image</label>
                                 <input type="file" name="image" class="form-control mb-2">
                             </div>
