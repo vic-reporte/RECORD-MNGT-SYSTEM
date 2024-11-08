@@ -47,10 +47,10 @@ if (isset($_POST['add_record_btn'])) {
                     // Insert the new record
                     $insert_query = "INSERT INTO record_unit_data (route_number, record_type, source, subject_matter, action_unit, created_by, modified_by, release_by, status, remark, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                     
+                    
                     $stmt = $con->prepare($insert_query);
                     if ($stmt) { // Proceed only if $stmt is prepared successfully
                         $stmt->bind_param("sssssssssss", $route_number, $record_type, $source, $subject_matter, $action_unit, $created_by, $modified_by, $release_by, $status, $remark, $filename);
-
                         if ($stmt->execute()) {
                             move_uploaded_file($_FILES['image']['tmp_name'], $path . DIRECTORY_SEPARATOR . $filename);
                             redirect("add-record.php?route_number=$route_number", "Record Added Successfully");

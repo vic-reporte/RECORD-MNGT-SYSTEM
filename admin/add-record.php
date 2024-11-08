@@ -78,7 +78,7 @@ include('../middleware/adminMiddleware.php');
                             </div>
                             <div class="col-md-4">
                                 <label for="select">Source:</label>
-                                <select class="form-select mb-2" name="source">
+                                <select class="form-select" name="source">
                                     <option>Accounting Unit</option>
                                     <option>Admin</option>
                                     <option>ASDS</option>
@@ -101,7 +101,7 @@ include('../middleware/adminMiddleware.php');
                                 <textarea class="form-control mb-2" rows="2" name="subject_matter"></textarea>
                             </div>
 
-                            <div class="col-md-3">
+                            <class="col-md-3">
                                 <label for="select">Action Unit:</label>
                                 <select class="form-select mb-2" name="action_unit">
                                     <option>Accounting Unit</option>
@@ -119,7 +119,6 @@ include('../middleware/adminMiddleware.php');
                                     <option>SGOD</option>
                                     <option>Supply Unit</option>
                                 </select>
-                            </div>
                             </div>
                             <div class="col-md-3">
                                 <label for="created_by">Created By:</label>
@@ -152,10 +151,10 @@ include('../middleware/adminMiddleware.php');
                                     <option>Filed</option>
                                 </select>
                             </div>
-                            <div class="col-md-4">
+                            <div-- class="col-md-4">
                                 <label for="image">Captured Image</label>
                                 <input type="file" name="image" class="form-control mb-2" accept="image/*">
-                            </div>
+                            </div-->
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-info mt-3" name="add_record_btn" >Save Record</button>
                             </div>

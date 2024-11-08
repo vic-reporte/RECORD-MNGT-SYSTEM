@@ -157,8 +157,10 @@ include('../middleware/adminMiddleware.php');
                                         <label for="select">Remark:</label>
                                         <select class="form-select text-center" name="remark" class="control-form mb-2">
                                             <option <?= ($data['remark'] == 'Release') ? 'selected' : '' ?>>Release</option>
+                                            <option <?= ($data['remark'] == 'For Release') ? 'selected' : '' ?>>For Release</option>
                                             <option <?= ($data['remark'] == 'Cancelled') ? 'selected' : '' ?>>Cancelled</option>
                                             <option <?= ($data['remark'] == 'Filed') ? 'selected' : '' ?>>Filed</option>
+                                            <option <?= ($data['remark'] == 'For Filed') ? 'selected' : '' ?>>For Filed</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4">

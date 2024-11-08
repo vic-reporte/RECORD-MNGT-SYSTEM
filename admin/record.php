@@ -22,10 +22,10 @@ include('../middleware/adminMiddleware.php');
                           <th>Source</th>
                           <th>Subject Matter</th>
                           <th>Action Unit</th>
-                          <th>Release By</th>
-                          <th>Claim By</th>
-                          <th>Status</th>
-                          <th>Remark</th>
+                          <!--th>Release By</th-->
+                          <!--th>Claim By</!--th>
+                          <!-th>Status</th-->
+                          <!--th>Remark</th-->
                           <th>Action</th>
                       </tr>
                    </thead>
@@ -45,17 +45,17 @@ include('../middleware/adminMiddleware.php');
                                       <td> <?= $item['action_unit']; ?></td>
                                       <!--td> <!?= $item['modified_by']; ?></!--td-->
                                       <!--td> <!?= $item['created_by']; ?></!--td-->
-                                      <td> <?= $item['release_by']; ?></td>
-                                      <!td> <!?= $item['release_at']; ?><td-->
-                                      <td>
-                                        <?php if (!empty($item['image'])): ?>
-                                           <img src="../uploads/<?= $item['image']; ?>" alt="<?= $item ['image']; ?>" style="width:50px; height: auto;">
-                                        <?php else: ?>  
+                                      <!--td> <!?= $item['release_by']; ?></!--td-->
+                                      <!--td> <!?= $item['release_at']; ?><td-->
+                                      <!--td>
+                                        <!?php if (!empty($item['image'])): ?>
+                                           <img src="../uploads/<!?= $item['image']; ?>" alt="<!?= $item ['image']; ?>" style="width:50px; height: auto;">
+                                        <!?php else: ?>  
                                           <img src="../path/to/default_image.jpg" alt="No image available" style="width:50px; height: auto;">
-                                        <?php endif; ?>
-                                      </td>
-                                      <td> <?= $item['status']; ?></td>
-                                      <td> <?= $item ['remark']; ?></td>
+                                        <!?php endif; ?>
+                                      </td-->
+                                      <!--td> <!?= $item['status']; ?></!--td>
+                                      <td> <!?= $item ['remark']; ?></td>
                                       <!td> <!-?= $item ['created_at']; ?></td-->
                                       <td> 
                                         <a href="view-record.php?route_number=<?= $item ['route_number']; ?>" class="btn btn-info -btn-sm" >View</a>
