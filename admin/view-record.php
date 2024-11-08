@@ -43,11 +43,11 @@ include('../middleware/adminMiddleware.php');
                                         <p><strong>Created At:</strong> <?= htmlspecialchars($row['created_at']); ?></p>
                                         <p><strong>Updated At:</strong> <?= htmlspecialchars($row['updated_at']); ?></p>
                                         <?php if (!empty($row['image'])) { ?>
-                                            <p><strong>Current Image:</strong></p>
+                                            <p><strong>Claimer Image:</strong></p>
                                             <img src="../uploads/<?= htmlspecialchars($row['image']); ?>" alt="Captured Image" style="width:100px; height:auto;">
                                             <input type="hidden" name="old_captured_image" value="<?= htmlspecialchars($row['image']); ?>">
                                         <?php } else { ?>
-                                            <p><strong>Current Image:</strong> No image available.</p>
+                                            <p><strong>Claimer Image:</strong> No image available.</p>
                                         <?php } ?>
                                     </div>
                                 </div>

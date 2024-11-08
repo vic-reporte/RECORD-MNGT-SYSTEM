@@ -164,7 +164,7 @@ include('../middleware/adminMiddleware.php');
                                     <div class="col-md-4">
                                         <label for="">Captured Image</label>
                                         <input type="file" name="image" class="form-control mb-2">
-                                        <label for="">Current Image</label>
+                                        <label for="">Claimer Image</label>
                                         <input type="hidden" name="old_captured_image" value="<?= $data['image'] ?>">
                                         <img src="../uploads/<?= $data ['image'] ?>" alt="<?= $data ['image']; ?>" style="width:50px; height: auto;">
                                     </div>

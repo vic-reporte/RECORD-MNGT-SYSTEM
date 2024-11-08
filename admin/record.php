@@ -1,6 +1,5 @@
 <?php
 
-//include('../middleware/adminMiddleware.php'); Not Applicable this if in the upper/top
 include('includes/header.php');
 include('../middleware/adminMiddleware.php');
 ?>
@@ -11,7 +10,7 @@ include('../middleware/adminMiddleware.php');
             <div class="card">
               <div class="card-header mt-0">
                 <h2>Record Data 
-                  <a href="create-record.php" class="btn btn-info float-end">Add Record</a>
+                  <a href="add-record.php" class="btn btn-info float-end">Add Record</a>
                 </h2>
               </div>
               <div class="card-body">
@@ -23,10 +22,7 @@ include('../middleware/adminMiddleware.php');
                           <th>Source</th>
                           <th>Subject Matter</th>
                           <th>Action Unit</th>
-                          <!--th>Modified By</--th-->
-                          <!--th>Created By</!--th-->
                           <th>Release By</th>
-                          <!--th>Release At</th-->
                           <th>Claim By</th>
                           <th>Status</th>
                           <th>Remark</th>
@@ -47,10 +43,10 @@ include('../middleware/adminMiddleware.php');
                                       <td> <?= $item['source']; ?></td>
                                       <td> <?= $item['subject_matter']; ?></td>
                                       <td> <?= $item['action_unit']; ?></td>
-                                      <!--td> <?= $item['modified_by']; ?></!--td-->
-                                      <!--td> <?= $item['created_by']; ?></!--td-->
+                                      <!--td> <!?= $item['modified_by']; ?></!--td-->
+                                      <!--td> <!?= $item['created_by']; ?></!--td-->
                                       <td> <?= $item['release_by']; ?></td>
-                                      <!--td> <!?= $item['release_at']; ?><td-->
+                                      <!td> <!?= $item['release_at']; ?><td-->
                                       <td>
                                         <?php if (!empty($item['image'])): ?>
                                            <img src="../uploads/<?= $item['image']; ?>" alt="<?= $item ['image']; ?>" style="width:50px; height: auto;">
@@ -60,14 +56,13 @@ include('../middleware/adminMiddleware.php');
                                       </td>
                                       <td> <?= $item['status']; ?></td>
                                       <td> <?= $item ['remark']; ?></td>
-                                      <!--td> <!-?= $item ['created_at']; ?></td-->
+                                      <!td> <!-?= $item ['created_at']; ?></td-->
                                       <td> 
                                         <a href="view-record.php?route_number=<?= $item ['route_number']; ?>" class="btn btn-info -btn-sm" >View</a>
                                         <a href="edit-record.php?route_number=<?= $item ['route_number']; ?>" class="btn btn-success -btn-sm" >Edit</a>
                                         <form action="code.php" method="POST" style="display:inline-block;">
                                           <input type="hidden" name="record_route_number" value="<?= $item ['route_number']; ?>">
                                           <button type="submit" class="btn btn-danger -btn-sm" name="delete_record_btn">Delete</button>
-                                          <!--button type="submit" class="btn btn-danger -btn-sm delete_record_btn" value="<!?= $item ['route_number']; ?>">Delete</!--button-->
                                         </form>
                                       </td>
                                   </tr>

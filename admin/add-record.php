@@ -9,12 +9,13 @@ include('../middleware/adminMiddleware.php');
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Create Record 
+                    <h4>Add Record 
                         <a href="record.php" class="btn btn-danger float-end">BACK</a>
                     </h4>
                 </div>
+
                 <div class="card-body">
-                    <form action="record.php" method="POST" enctype="multipart/form-data">
+                    <form action="code.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-4">
                                 <label class="mb-0">Route Number:</label>
@@ -94,10 +95,12 @@ include('../middleware/adminMiddleware.php');
                                     <option>Supply Unit</option>  
                                 </select>
                             </div>
+
                             <div class="mb-3 mt-2">
-                                <label for="">Subject Matter:</label>
+                                <label for="mb-0">Subject Matter:</label>
                                 <textarea class="form-control mb-2" rows="2" name="subject_matter"></textarea>
                             </div>
+
                             <div class="col-md-3">
                                 <label for="select">Action Unit:</label>
                                 <select class="form-select mb-2" name="action_unit">
@@ -119,22 +122,20 @@ include('../middleware/adminMiddleware.php');
                             </div>
                             </div>
                             <div class="col-md-3">
-                                <label for="select">Created By:</label>
+                                <label for="created_by">Created By:</label>
                                 <select class="form-select mb-2" name="created_by">
                                     <option>User 1</option>
-                                    <option>User 2</option>
-                                    
+                                    <option>User 2</option>   
                                 </select>
                             <div class="col-md-3">
-                                <label for="select">Release By:</label>
+                                <label for="release_by">Release By:</label>
                                 <select class="form-select mb-2" name="release_by">
                                     <option>User 1</option>
-                                    <option>User 2</option>
-                                    
+                                    <option>User 2</option>  
                                 </select>
                             </div>
                             <div class="col-md-3">
-                                <label for="select">Status:</label>
+                                <label for="status">Status:</label>
                                 <select class="form-select mb-2" name="status">
                                     <option>Release</option>
                                     <option>For Release</option>
@@ -142,8 +143,9 @@ include('../middleware/adminMiddleware.php');
                                     <option>Filed</option>
                                 </select>
                             </div>
+
                             <div class="col-md-3">
-                                <label for="select">Remark:</label>
+                                <label for="remark">Remark:</label>
                                 <select class="form-select mb-2" name="remark">
                                     <option>Release</option>
                                     <option>Cancelled</option>
@@ -151,11 +153,11 @@ include('../middleware/adminMiddleware.php');
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <label for="">Captured Image</label>
-                                <input type="file" name="image" class="form-control mb-2">
+                                <label for="image">Captured Image</label>
+                                <input type="file" name="image" class="form-control mb-2" accept="image/*">
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" name="save" class="btn btn-info mt-3">Save Record</button>
+                                <button type="submit" class="btn btn-info mt-3" name="add_record_btn" >Save Record</button>
                             </div>
                         </div>
                     </form>
