@@ -6,7 +6,7 @@ include('../middleware/adminMiddleware.php');
 
 <div class="container-fluid py-3">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-14">
             <div class="card">
                 <div class="card-header">
                     <h4>Add Record 
@@ -18,8 +18,8 @@ include('../middleware/adminMiddleware.php');
                     <form action="code.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-4">
-                                <label class="mb-0">Route Number:</label>
-                                <input type="text" name="route_number" placeholder="Enter Route Number" class="form-control mb-2">
+                                <label class="mb-2">Route Number:</label>
+                                <input type="text" name="route_number" placeholder="Enter Route Number" class="form-control">
                             </div>
                             <div class="col-md-4">
                                 <label for="select">Record Type:</label>
@@ -101,7 +101,7 @@ include('../middleware/adminMiddleware.php');
                                 <textarea class="form-control mb-2" rows="2" name="subject_matter"></textarea>
                             </div>
 
-                            <class="col-md-3">
+                            <div class="col-md-3">
                                 <label for="select">Action Unit:</label>
                                 <select class="form-select mb-2" name="action_unit">
                                     <option>Accounting Unit</option>
@@ -120,7 +120,7 @@ include('../middleware/adminMiddleware.php');
                                     <option>Supply Unit</option>
                                 </select>
                             </div>
-                            <div class="col-md-3">
+                            <!--div class="col-md-3">
                                 <label for="created_by">Created By:</label>
                                 <select class="form-select mb-2" name="created_by">
                                     <option>User 1</option>

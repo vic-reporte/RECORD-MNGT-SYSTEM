@@ -10,21 +10,8 @@ if (isset($_POST['add_record_btn'])) {
     $source = $_POST['source'];
     $subject_matter = $_POST['subject_matter'];
     $action_unit = $_POST['action_unit'];
-    $release_by = $_POST['release_by'];
-    $status = $_POST['status'];
-    $remark = $_POST['remark'];
-    $created_by = "some_user"; // Replace with actual data, e.g., from session
-    $modified_by = isset($_POST['modified_by']) ? $_POST['modified_by'] : "default_user"; // Replace as needed
-
-    $image = $_FILES['image']['name'];
-    $path = ".." . DIRECTORY_SEPARATOR . "uploads";
-    if (!is_dir($path)) {
-        mkdir($path, 0777, true); // Create the directory if it doesn't exist
-    }
-    $image_ext = pathinfo($image, PATHINFO_EXTENSION);
-    $filename = time() . '.' . $image_ext;
-
-    // Check if the route_number already exists
+    
+    //*Check if the route_number already exists*//
     $check_query = "SELECT * FROM record_unit_data WHERE route_number = ?";
     $stmt_check = $con->prepare($check_query);
     $stmt_check->bind_param("s", $route_number);
@@ -32,45 +19,26 @@ if (isset($_POST['add_record_btn'])) {
     $result = $stmt_check->get_result();
 
     if ($result->num_rows > 0) {
-        // Route number already exists, handle error
+        //*Route number already exists, handle error*//
         redirect("add-record.php", "Route number already exists");
     } else {
-        // Proceed with file validation and insert
-        if (!empty($image)) {
-            $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif'];
-            $allowed_mime_types = ['image/jpeg', 'image/png', 'image/gif'];
+        // Insert the new record//
+        $insert_query = "INSERT INTO record_unit_data (route_number, record_type, source, subject_matter, action_unit) VALUES (?, ?, ?, ?, ?)";
+         
+        $stmt = $con->prepare($insert_query);
+            if ($stmt) { //* Proceed only if $stmt is prepared successfully*//
+            $stmt->bind_param("sssss", $route_number, $record_type, $source, $subject_matter, $action_unit);
 
-            if (in_array($image_ext, $allowed_extensions)) {
-                $mime_type = mime_content_type($_FILES['image']['tmp_name']);
-                
-                if (in_array($mime_type, $allowed_mime_types)) {
-                    // Insert the new record
-                    $insert_query = "INSERT INTO record_unit_data (route_number, record_type, source, subject_matter, action_unit, created_by, modified_by, release_by, status, remark, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                    
-                    
-                    $stmt = $con->prepare($insert_query);
-                    if ($stmt) { // Proceed only if $stmt is prepared successfully
-                        $stmt->bind_param("sssssssssss", $route_number, $record_type, $source, $subject_matter, $action_unit, $created_by, $modified_by, $release_by, $status, $remark, $filename);
-                        if ($stmt->execute()) {
-                            move_uploaded_file($_FILES['image']['tmp_name'], $path . DIRECTORY_SEPARATOR . $filename);
-                            redirect("add-record.php?route_number=$route_number", "Record Added Successfully");
-                        } else {
-                            redirect("add-record.php", "Something Went Wrong With Display");
-                        }
-                        $stmt->close();
-                    } else {
-                        error_log("SQL Prepare Error: " . $con->error); // Log error if prepare failed
-                        redirect("add-record.php", "Database Error: Could not prepare statement");
-                    }
-                } else {
-                    redirect("add-record.php", "Invalid MIME Type");
-                }
-            } else {
-                redirect("add-record.php", "Invalid File Extension");
-            }
+            if ($stmt->execute()) {
+                redirect("add-record.php?route_number=$route_number", "Record Added Successfully");
         } else {
-            redirect("create-record.php", "No File Uploaded");
-        }
+            redirect("add-record.php", "Something Went Wrong With Display");
+            }
+            $stmt->close();
+        } else {
+            error_log("SQL Prepare Error: " . $con->error); // Log error if prepare failed
+            redirect("add-record.php", "Database Error: Could not prepare statement");
+        }   
     }
     $stmt_check->close();
 }
