@@ -120,41 +120,6 @@ include('../middleware/adminMiddleware.php');
                                     <option>Supply Unit</option>
                                 </select>
                             </div>
-                            <!--div class="col-md-3">
-                                <label for="created_by">Created By:</label>
-                                <select class="form-select mb-2" name="created_by">
-                                    <option>User 1</option>
-                                    <option>User 2</option>   
-                                </select>
-                            <div class="col-md-3">
-                                <label for="release_by">Release By:</label>
-                                <select class="form-select mb-2" name="release_by">
-                                    <option>User 1</option>
-                                    <option>User 2</option>  
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="status">Status:</label>
-                                <select class="form-select mb-2" name="status">
-                                    <option>Release</option>
-                                    <option>For Release</option>
-                                    <option>Cancelled</option>
-                                    <option>Filed</option>
-                                </select>
-                            </div>
-
-                            <div class="col-md-3">
-                                <label for="remark">Remark:</label>
-                                <select class="form-select mb-2" name="remark">
-                                    <option>Release</option>
-                                    <option>Cancelled</option>
-                                    <option>Filed</option>
-                                </select>
-                            </div>
-                            <div-- class="col-md-4">
-                                <label for="image">Captured Image</label>
-                                <input type="file" name="image" class="form-control mb-2" accept="image/*">
-                            </div-->
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-info mt-3" name="add_record_btn" >Save Record</button>
                             </div>

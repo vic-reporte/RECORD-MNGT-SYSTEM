@@ -111,7 +111,7 @@ include('../middleware/adminMiddleware.php');
                                     </div>
                                     <div class="col-md-2">
                                         <label for="select">Action Unit:</label>
-                                        <select class="form-select text-center" name="action_unit" class="control-form mb-2">
+                                        <select class="form-select" name="action_unit" class="control-form mb-2">
                                         <option <?= ($data['source'] == 'Accounting Unit') ? 'selected' : '' ?>>Accounting Unit</option>
                                             <option <?= ($data['action_unit'] == 'Admin') ? 'selected' : '' ?>>Admin</option>
                                             <option <?= ($data['action_unit'] == 'ASDS') ? 'selected' : '' ?>>ASDS</option>
@@ -129,14 +129,15 @@ include('../middleware/adminMiddleware.php');
                                         </select>
                                     </div>
                                     </div>
-                                    <div class="col-md-4" style="display:inline-block;">
+                                    <div class="col-md-4">
                                         <label for="select">Modified By:</label>
                                         <select class="form-select"  name="modified_by" class="control-form mb-2">
                                             <option>User 1</option>
                                             <option <?= ($data['release_by'] == 'User 1') ? 'selected' : '' ?>>User 1</option>
                                             <option <?= ($data['release_by'] == 'User 2') ? 'selected' : '' ?>>User 2</option>
                                         </select>
-                                    <div class="col-md-4" style="display:inline-block;">
+                                    </div>
+                                    <div class="col-md-4">
                                         <label for="select">Release By:</label>
                                         <select class="form-select"  name="release_by" class="control-form mb-2">
                                             <option>User 1</option>
@@ -144,18 +145,18 @@ include('../middleware/adminMiddleware.php');
                                             <option <?= ($data['release_by'] == 'User 2') ? 'selected' : '' ?>>User 2</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-4" style="display:inline-block;">
+                                    <div class="col-md-4">
                                         <label for="select">Status:</label>
-                                        <select class="form-select text-center" name="status" class="control-form mb-2" >
+                                        <select class="form-select" name="status" class="control-form mb-2" >
                                             <option <?= ($data['status'] == 'Release') ? 'selected' : '' ?>>Release</option>
                                             <option <?= ($data['status'] == 'For Release') ? 'selected' : '' ?>>For Release</option>
                                             <option <?= ($data['status'] == 'Cancelled') ? 'selected' : '' ?>>Cancelled</option>
                                             <option <?= ($data['status'] == 'Filed') ? 'selected' : '' ?>>Filed</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-4" style="display:inline-block;">
+                                    <div class="col-md-4">
                                         <label for="select">Remark:</label>
-                                        <select class="form-select text-center" name="remark" class="control-form mb-2">
+                                        <select class="form-select" name="remark" class="control-form mb-2">
                                             <option <?= ($data['remark'] == 'Release') ? 'selected' : '' ?>>Release</option>
                                             <option <?= ($data['remark'] == 'For Release') ? 'selected' : '' ?>>For Release</option>
                                             <option <?= ($data['remark'] == 'Cancelled') ? 'selected' : '' ?>>Cancelled</option>
@@ -173,7 +174,6 @@ include('../middleware/adminMiddleware.php');
                                     <div class="col-md-12">
                                         <button type="submit" class="btn btn-success btn-sm" name="update_record_btn">Update</button>
                                     </div>
-                                </div>
                             </form>
                         </div>
                     </div>

@@ -13,7 +13,7 @@ include('../middleware/adminMiddleware.php');
                   <a href="add-record.php" class="btn btn-info float-end">Add Record</a>
                 </h2>
               </div>
-              <div class="card-body text-center">
+              <div class="card-body">
                 <table class="table table-secondary table-hover">
                    <thead>
                       <tr>
