@@ -132,7 +132,8 @@ include('../middleware/adminMiddleware.php');
                                     <div class="col-md-4">
                                         <label for="select">Modified By:</label>
                                         <select class="form-select"  name="modified_by" class="control-form mb-2">
-                                            <option>User 1</option>
+                                            <option>Admin</option>
+                                            <option <?= ($data['release_by'] == 'Admin') ? 'selected' : '' ?>>Admin</option>
                                             <option <?= ($data['release_by'] == 'User 1') ? 'selected' : '' ?>>User 1</option>
                                             <option <?= ($data['release_by'] == 'User 2') ? 'selected' : '' ?>>User 2</option>
                                         </select>
@@ -140,7 +141,8 @@ include('../middleware/adminMiddleware.php');
                                     <div class="col-md-4">
                                         <label for="select">Release By:</label>
                                         <select class="form-select"  name="release_by" class="control-form mb-2">
-                                            <option>User 1</option>
+                                            <option>Admin</option>
+                                            <option <?= ($data['release_by'] == 'Admin') ? 'selected' : '' ?>>Admin</option>
                                             <option <?= ($data['release_by'] == 'User 1') ? 'selected' : '' ?>>User 1</option>
                                             <option <?= ($data['release_by'] == 'User 2') ? 'selected' : '' ?>>User 2</option>
                                         </select>
@@ -152,6 +154,7 @@ include('../middleware/adminMiddleware.php');
                                             <option <?= ($data['status'] == 'For Release') ? 'selected' : '' ?>>For Release</option>
                                             <option <?= ($data['status'] == 'Cancelled') ? 'selected' : '' ?>>Cancelled</option>
                                             <option <?= ($data['status'] == 'Filed') ? 'selected' : '' ?>>Filed</option>
+                                            <option <?= ($data['status'] == 'Pending') ? 'selected' : '' ?>>Pending</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4">

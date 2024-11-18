@@ -53,8 +53,7 @@ else if(isset($_POST['update_record_btn']))
     $release_by = $_POST['release_by'];
     $status = $_POST['status'];
     $remark = $_POST['remark'];
-    //$created_at = $_POST['created_at'];
-
+    
     $new_image = $_FILES['image']['name'];
     $old_captured_image = $_POST['old_captured_image'];
     

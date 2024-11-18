@@ -169,7 +169,8 @@ include('functions/user-functions.php');
                                         <input type="file" name="image" class="form-control mb-2">
                                         <label for="">Claimer Image</label>
                                         <input type="hidden" name="old_captured_image" value="<?= $data['image'] ?>">
-                                        <img src="../uploads/<?= $data ['image'] ?>" alt="<?= $data ['image']; ?>" style="width:50px; height: auto;">
+                                        <!--img src="../uploads/<!?= $data ['image'] ?>" alt="<!?= $data ['image']; ?>" style="width:50px; height: auto;"-->
+                                        <img src="./uploads/<?= $data ['image'] ?>" alt="<?= $data ['image']; ?>" style="width:50px; height: auto;">
                                     </div>
                                     <div class="col-md-12">
                                         <button type="submit" class="btn btn-success btn-sm" name="update_record_btn">Update</button>

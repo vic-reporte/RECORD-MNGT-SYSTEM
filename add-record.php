@@ -120,7 +120,7 @@ include('functions/user-functions.php');
                                 </select>
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-info mt-3" name="user_add_record_btn" >Save Record</button>
+                                <button type="submit" class="btn btn-info mt-3" name="add_record_btn" >Save Record</button>
                             </div>
                         </div>
                     </form>

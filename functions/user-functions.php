@@ -8,19 +8,19 @@ function getByroute_number($table, $route_number)
     $query = "SELECT * FROM  record_unit_data WHERE route_number='$route_number'";
     return $query_run = mysqli_query($con, $query);
 }
-    function getAllRecord($record_unit_data)
-    {
-        global $con; // Ensure $con is the database connection
-        $query = "SELECT * FROM record_unit_data"; 
-        $result = mysqli_query($con, $query);
+function getAllRecord($record_unit_data)
+{
+    global $con; // Ensure $con is the database connection
+    $query = "SELECT * FROM record_unit_data"; 
+    $result = mysqli_query($con, $query);
     
-        // Check for results and return as an associative array
-        if ($result && mysqli_num_rows($result) > 0) {
-            return mysqli_fetch_all($result, MYSQLI_ASSOC);
-        } else {
-        return [];
-        }
-    }
+    // Check for results and return as an associative array
+    if ($result && mysqli_num_rows($result) > 0) {
+        return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    } else {
+    return [];
+     }
+}
 function redirect($url, $message)
 {
     $_SESSION['message'] = $message;

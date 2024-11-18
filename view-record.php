@@ -44,7 +44,8 @@ include('functions/user-functions.php');
                                         <p><strong>Updated At:</strong> <?= htmlspecialchars($row['updated_at']); ?></p>
                                         <?php if (!empty($row['image'])) { ?>
                                             <p><strong>Claimer Image:</strong></p>
-                                            <img src="../uploads/<?= htmlspecialchars($row['image']); ?>" alt="Captured Image" style="width:100px; height:auto;">
+                                            <!--img src="../uploads/<!?= htmlspecialchars($row['image']); ?>" alt="Captured Image" style="width:100px; height:auto;"-->
+                                            <img src="./uploads/<?= htmlspecialchars($row['image']); ?>" alt="Captured Image" style="width:100px; height:auto;">
                                             <input type="hidden" name="old_captured_image" value="<?= htmlspecialchars($row['image']); ?>">
                                         <?php } else { ?>
                                             <p><strong>Claimer Image:</strong> No image available.</p>
