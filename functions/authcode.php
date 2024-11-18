@@ -72,7 +72,7 @@ else if(isset($_POST['login_btn']))
 
         if($role_as == 1)
         {
-            redirect("../admin/index-dashboard.php", "Welcome To Dashboard");
+            redirect("../admin/index-dashboard.php", "Hello Admin, Welcome To Dashboard");
         }
         else
         {
