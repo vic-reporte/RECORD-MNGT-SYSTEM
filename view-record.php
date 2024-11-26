@@ -42,14 +42,13 @@ include('functions/user-functions.php');
                                         <p><strong>Remark:</strong> <?= htmlspecialchars($row['remark']); ?></p>
                                         <p><strong>Created At:</strong> <?= htmlspecialchars($row['created_at']); ?></p>
                                         <p><strong>Updated At:</strong> <?= htmlspecialchars($row['updated_at']); ?></p>
-                                        <?php if (!empty($row['image'])) { ?>
+                                        <?php if (!empty($row['image'])): ?>
                                             <p><strong>Claimer Image:</strong></p>
-                                            <!--img src="../uploads/<!?= htmlspecialchars($row['image']); ?>" alt="Captured Image" style="width:100px; height:auto;"-->
                                             <img src="./uploads/<?= htmlspecialchars($row['image']); ?>" alt="Captured Image" style="width:100px; height:auto;">
                                             <input type="hidden" name="old_captured_image" value="<?= htmlspecialchars($row['image']); ?>">
-                                        <?php } else { ?>
+                                        <?php else: ?>
                                             <p><strong>Claimer Image:</strong> No image available.</p>
-                                        <?php } ?>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </form>

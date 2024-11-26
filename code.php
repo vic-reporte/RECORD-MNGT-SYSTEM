@@ -77,16 +77,14 @@ else if(isset($_POST['update_record_btn']))
             if($_FILES['image']['name'] != "")
             {
                 move_uploaded_file($_FILES['image']['tmp_name'], $path .'/'. $update_filename);
-                //if(file_exists("../uploads/".$old_captured_image))
                 if(file_exists("./uploads/".$old_captured_image))
-                {
-                    //unlink("../uploads/".$old_captured_image);                   
+                {               
                     unlink("./uploads/".$old_captured_image);                   
                 }
             }
             redirect("edit-record.php?route_number=$record_route_number", "Record Updated Successfully");
         }
-        
+        else
         {
             redirect("edit-record.php?route_number=$record_route_number", "Something Went Wrong");
         }
@@ -106,10 +104,8 @@ else if(isset($_POST['delete_record_btn']))
 
     if($delete_query_run)
     {
-        //if(file_exists("../uploads/".$image))
         if(file_exists("./uploads/".$image))
             {
-                //unlink("../uploads/".$image);
                 unlink("./uploads/".$image);
             }
         redirect("record.php", "Record Deleted Successfully");
