@@ -33,8 +33,12 @@ include('includes/header.php');
                     <div class="card-body">
                         <form action="functions/authcode.php" method="POST">
                             <div class="mb-3">
-                                <label class="form-label">Name</label>
-                                <input type="text" name="name" class="form-control" placeholder="Enter your name">
+                                <label class="form-label">First Name</label>
+                                <input type="text" name="first_name" class="form-control" placeholder="Enter your first name">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" name="last_name" class="form-control" placeholder="Enter your last name">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Phone Number</label>

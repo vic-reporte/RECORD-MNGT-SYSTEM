@@ -95,7 +95,6 @@ include('../middleware/adminMiddleware.php');
                                     <option>Supply Unit</option>  
                                 </select>
                             </div>
-
                             <div class="mb-3 mt-2">
                                 <label for="mb-0">Subject Matter:</label>
                                 <textarea class="form-control mb-2" rows="2" name="subject_matter"></textarea>

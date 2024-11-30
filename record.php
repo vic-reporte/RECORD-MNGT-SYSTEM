@@ -8,7 +8,7 @@ include('functions/user-functions.php');
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-              <div class="card-header mt-0">
+              <div class="card-header mt-0 border shadow p-3 rounded">
                 <h2>Our Record Data 
                   <a href="add-record.php" class="btn btn-info float-end">Add Record</a>
                 </h2>
