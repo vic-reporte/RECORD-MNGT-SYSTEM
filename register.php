@@ -41,10 +41,6 @@ include('includes/header.php');
                                 <input type="text" name="last_name" class="form-control" placeholder="Enter your last name">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Phone Number</label>
-                                <input type="number" name="phone" class="form-control" placeholder="Enter your phone number">
-                            </div>
-                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email Address</label>
                                 <input type="email" name="email" class="form-control" placeholder="Enter your email" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
@@ -55,6 +51,10 @@ include('includes/header.php');
                             <div class="mb-3">
                                 <label class="form-label">Confirm Password</label>
                                 <input type="password" name="cpassword" class="form-control" placeholder="Confirm password" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Phone Number</label>
+                                <input type="number" name="phone_num" class="form-control" placeholder="Enter your phone number">
                             </div>
                             <button type="submit" name="register_btn" class="btn btn-primary">Submit</button>
                         </form>

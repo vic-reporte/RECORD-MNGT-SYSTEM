@@ -24,13 +24,26 @@ function getAllUsers($table)
     global $con;
     $query = "SELECT * FROM users";
     return $query_run = mysqli_query($con, $query);
-
 }
+//function redirect($url, $message)
+//{
+    //$_SESSION['message'] = $message;
+    //header('Location: ' .$url);
+    //exit();
+//}
 function redirect($url, $message)
 {
-    $_SESSION['message'] = $message;
-    header('Location: '.$url);
-    exit();
+    if (!headers_sent()) {
+        session_start(); // Ensure the session is started
+        $_SESSION['message'] = $message;
+        header('Location: ' . $url);
+        exit();
+    } else {
+        echo "<script>
+                alert('$message');
+                window.location.href = '$url';
+              </script>";
+        exit();
+    }
 }
-
 ?>

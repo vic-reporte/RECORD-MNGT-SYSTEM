@@ -7,12 +7,12 @@ include('myfunctions.php');
 
 if(isset($_POST['register_btn']))
 {
-    $name = mysqli_real_escape_string($con, $_POST['name']);
-    $phone = mysqli_real_escape_string($con, $_POST['phone']);
+    $name = mysqli_real_escape_string($con, $_POST['first_name']);
+    $name = mysqli_real_escape_string($con, $_POST['last_name']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
-
+    $phone_num = mysqli_real_escape_string($con, $_POST['phone_num']);
     // Check if email is already registered
     $check_email_query = "SELECT email FROM users WHERE email= '$email' ";
     $check_email_query_run = mysqli_query($con, $check_email_query);
@@ -28,7 +28,7 @@ if(isset($_POST['register_btn']))
     if($password == $cpassword)
     {
         //Insert user data
-        $insert_query = "INSERT INTO users (name, email, phone_num, password) VALUES ('$name', '$email', '$phone_num', '$password')";
+        $insert_query = "INSERT INTO users (first_name, last_name, email, password, cpassword, phone_num) VALUES ('$first_name', '$last_name', '$email', '$password', '$cpassword', '$phone_num')";
         $insert_query_run = mysqli_query($con, $insert_query);
 
         if($insert_query_run)
