@@ -25,12 +25,6 @@ function getAllUsers($table)
     $query = "SELECT * FROM users";
     return $query_run = mysqli_query($con, $query);
 }
-//function redirect($url, $message)
-//{
-    //$_SESSION['message'] = $message;
-    //header('Location: ' .$url);
-    //exit();
-//}
 function redirect($url, $message)
 {
     if (!headers_sent()) {
