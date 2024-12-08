@@ -7,12 +7,12 @@ include('myfunctions.php');
 
 if(isset($_POST['register_btn']))
 {
-    $name = mysqli_real_escape_string($con, $_POST['first_name']);
-    $name = mysqli_real_escape_string($con, $_POST['last_name']);
+    //$name = mysqli_real_escape_string($con, $_POST['first_name']);
+    //$name = mysqli_real_escape_string($con, $_POST['last_name']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
-    $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
-    $phone_num = mysqli_real_escape_string($con, $_POST['phone_num']);
+    //$cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
+    //$phone_num = mysqli_real_escape_string($con, $_POST['phone_num']);
     // Check if email is already registered
     //$check_email_query = "SELECT email FROM users WHERE email= '$email' ";
     $check_email_query = "SELECT email FROM users WHERE email= ?";
@@ -33,10 +33,12 @@ if(isset($_POST['register_btn']))
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         //Insert user data
-        $insert_query = "INSERT INTO users (first_name, last_name, email, password, cpassword, phone_num) VALUES (?, ?, ?, ?, ?, ?)";
+        //$insert_query = "INSERT INTO users (first_name, last_name, email, password, cpassword, phone_num) VALUES (?, ?, ?, ?, ?, ?)";
+        $insert_query = "INSERT INTO users (email, password) VALUES (?, ?, ?)";
         //$insert_query_run = mysqli_query($con, $insert_query);
         $stmt = mysqli_prepare($con, $insert_query);
-        mysqli_stmt_bind_param($stmt, 'sssss', $first_name, $last_name, $email, $hashed_password, $phone_num);
+        //mysqli_stmt_bind_param($stmt, 'sssss', $first_name, $last_name, $email, $hashed_password, $phone_num);
+        mysqli_stmt_bind_param($stmt, 'sss', $email, $hashed_password);
 
         //if($insert_query_run)
         if (mysqli_stmt_execute($stmt)) {
@@ -68,11 +70,13 @@ else if(isset($_POST['login_btn']))
         $_SESSION['auth'] = true;
 
         $userdata = mysqli_fetch_array($login_query_run);
-        $username = $userdata ['name'];
+        //$username = $userdata ['name'];
         $useremail = $userdata ['email'];
+        $userpassword = $userdata ['password'];
         $role_as = $userdata ['role_as'];
 
-        $_SESSION['auth_user'] = ['name' => $username,'email' => $useremail];
+        //$_SESSION['auth_user'] = ['name' => $username,'email' => $useremail];
+        $_SESSION['auth_user'] = ['email' => $useremail, 'password' =>$userpassword];
 
         $_SESSION['role_as'] = $role_as;
 

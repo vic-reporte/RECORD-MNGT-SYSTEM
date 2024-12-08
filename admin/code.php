@@ -91,29 +91,76 @@ else if(isset($_POST['update_record_btn']))
         }
         
 }
-else if(isset($_POST['delete_record_btn']))
-{
+if (isset($_POST['delete_record_btn'])) {
     $record_route_number = mysqli_real_escape_string($con, $_POST['record_route_number']);
 
-    $record_query = "SELECT * FROM record_unit_data WHERE route_number='route_number' ";
-    $record_query_run = mysqli_query($con, $record_query);
-    $record_data = mysqli_fetch_array($record_query_run);
-    $image = $record_data['image'];
+    // Fetch record to delete associated image
+    $record_query = "SELECT image FROM record_unit_data WHERE route_number = ?";
+    $stmt = $con->prepare($record_query);
+    $stmt->bind_param("s", $record_route_number);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($record_data = $result->fetch_assoc()) {
+        $image = $record_data['image'];
 
-    $delete_query = "DELETE FROM record_unit_data WHERE route_number='$record_route_number' ";
-    $delete_query_run = mysqli_query($con, $delete_query);
-
-    if($delete_query_run)
-    {
-        if(file_exists("../uploads/".$image))
+        // Delete record
+        $delete_query = "DELETE FROM record_unit_data WHERE route_number = ?";
+        $stmt_delete = $con->prepare($delete_query);
+        $stmt_delete->bind_param("s", $record_route_number);
+        if ($stmt_delete->execute()) {
+            if(file_exists("../uploads/".$image))
             {
                 unlink("../uploads/".$image);
             }
-        redirect("record.php", "Record Deleted Successfully");
-    }
-    else{
-        redirect("record.php", "Something went wrong ");
+            redirect("record.php", "Record Deleted Successfully");
+        } else {
+            redirect("record.php", "Error deleting record");
+        }
+        $stmt_delete->close();
+    } else {
+        redirect("record.php", "Record not found");
     }
     $stmt->close();
+}
+
+    //USER DATA //
+if (isset($_POST['add_user_btn'])) {
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $phone_num = $_POST['phone_num'];
+    $role_as = $_POST['role_as'];
+    
+    //*Check if the email already exists*//
+    $check_query = "SELECT email FROM users WHERE email = ?";
+    $stmt_check = $con->prepare($check_query);
+    $stmt_check->bind_param("s", $email);
+    $stmt_check->execute();
+    $result = $stmt_check->get_result();
+
+    if ($result->num_rows > 0) {
+        //*Email already exists, handle error*//
+        redirect("add-users.php", "Email already exists");
+    } else {
+        // Insert the email//
+        $insert_query = "INSERT INTO users (first_name, last_name, email, password, phone_num, role_as) VALUES (?, ?, ?, ?, ?, ?)";
+         
+        $stmt = $con->prepare($insert_query);
+            if ($stmt) { //* Proceed only if $stmt is prepared successfully*//
+            $stmt->bind_param("sssssi", $first_name, $last_name, $email, $hashed_password, $phone_num, $role_as);
+
+            if ($stmt->execute()) {
+                redirect("add-users.php?email=$email", "User Added Successfully");
+        } else {
+            redirect("add-users.php", "Something Went Wrong With Display");
+            }
+            $stmt->close();
+        } else {
+            error_log("SQL Prepare Error: " . $con->error); // Log error if prepare failed
+            redirect("add-users.php", "Database Error: Could not prepare statement");
+        }   
+    }
+    $stmt_check->close();
 }
 ?>

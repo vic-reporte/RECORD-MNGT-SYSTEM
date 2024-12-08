@@ -2,6 +2,7 @@
 
 include('includes/header.php');
 include('../middleware/adminMiddleware.php');
+include('../config/dbcon.php');
 ?>
 
 <div class="container-fluid py-3">
@@ -18,14 +19,6 @@ include('../middleware/adminMiddleware.php');
                     <form action="code.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-4">
-                                <label class="mb-2">ID:</label>
-                                <input type="text" name="id" placeholder="Enter ID" class="form-control">
-                            </div>
-                            <div class="col-md-4">
-                                <label class="mb-2">Role As:</label>
-                                <input type="text" name="role_as" placeholder="Enter Role As" class="form-control">
-                            </div>
-                            <div class="col-md-4">
                                 <label class="mb-2">First Name:</label>
                                 <input type="text" name="first_name" placeholder="Enter First Name" class="form-control">
                             </div>
@@ -33,20 +26,27 @@ include('../middleware/adminMiddleware.php');
                                 <label class="mb-2">Last Name:</label>
                                 <input type="text" name="last_name" placeholder="Enter Last Name" class="form-control">
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <label class="mb-2">Email:</label>
-                                <input type="text" name="email" placeholder="Enter Email" class="form-control">
+                                <input type="email" name="email" placeholder="Enter Email" class="form-control">
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <label class="mb-2">Password:</label>
-                                <input type="text" name="password" placeholder="Enter Password" class="form-control">
+                                <input type="password" name="password" placeholder="Enter Password" class="form-control">
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <label class="mb-2">Phone Number:</label>
-                                <input type="text" name="phone_num" placeholder="Enter Phone Number" class="form-control">
+                                <input type="tel" name="phone_num" placeholder="Enter Phone Number" class="form-control" patter="[0-9]{11}" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="mb-2">Role:</label>
+                                <select name="role_as" class="form-control" required>
+                                    <option value="1">Admin</option>
+                                    <option value="0">User</option>
+                                </select>
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-info mt-3" name="add_users_btn" >Save Users</button>
+                                <button type="submit" class="btn btn-info mt-3" name="add_users_btn" >Save User</button>
                             </div>
                         </div>
                     </form>

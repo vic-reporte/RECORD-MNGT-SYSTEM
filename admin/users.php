@@ -19,11 +19,8 @@ include('../config/dbcon.php');
                    <thead>
                       <tr>
                           <th>ID</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
                           <th>Email</th>
                           <th>Password</th>
-                          <th>Phone Number</th>
                           <th>Role As</th>
                           <th>Action</th>
                       </tr>
@@ -37,15 +34,12 @@ include('../config/dbcon.php');
                                     ?>
                                     <tr>
                                         <td><?= htmlspecialchars($user['id']); ?></td>
-                                        <td><?= htmlspecialchars($user['first_name']); ?></td>
-                                        <td><?= htmlspecialchars($user['last_name']); ?></td>
                                         <td><?= htmlspecialchars($user['email']); ?></td>
                                         <td><?= htmlspecialchars($user['password']); ?></td>
-                                        <td><?= htmlspecialchars($user['phone_num']); ?></td>
                                         <td><?= htmlspecialchars($user['role_as']); ?></td>
                                         <td>
-                                            <a href="view-users.php?id=<?= $user['id']; ?>" class="btn btn-info btn-sm">View</a>
-                                            <a href="edit-users.php?id=<?= $user['id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="users-view.php?id=<?= $user['id']; ?>" class="btn btn-info btn-sm">View</a>
+                                            <a href="users-edit.php?id=<?= $user['id']; ?>" class="btn btn-success btn-sm">Edit</a>
                                             <form action="code.php" method="POST" style="display:inline-block;">
                                                 <input type="hidden" name="id" value="<?= $user['id']; ?>">
                                                 <button type="submit" class="btn btn-danger btn-sm" name="delete_user_btn">Delete</button>
